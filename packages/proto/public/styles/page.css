@@ -1,0 +1,20 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: rgb(40, 31, 31);
+}
+
+h1{
+    background-color: rgb(86, 71, 71);
+}
+
+h2 {
+    background-color: rgb(225, 217, 131);
+    color: black;
+}
+
+a {
+    color:rgb(181, 82, 82)
+}
