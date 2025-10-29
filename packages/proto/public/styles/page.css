@@ -1,9 +1,9 @@
 * {
-    color: white;
+    color: var(--color-light-text);
 }
 
 body {
-    background-color: rgb(40, 31, 31);
+    background-color: var(--color-background);
 }
 
 h1{
@@ -12,9 +12,21 @@ h1{
 
 h2 {
     background-color: rgb(225, 217, 131);
-    color: black;
+    color: var(--color-dark-text);
 }
 
 a {
-    color:rgb(181, 82, 82)
+    color:var(--color-link);
+}
+
+button {
+    color: var(--color-dark-text);
+}
+
+input {
+    color: var(--color-dark-text);
+}
+
+textarea {
+    color: var(--color-dark-text);
 }
