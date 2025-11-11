@@ -1,6 +1,17 @@
 :root{
-    --color-light-text: white;
-    --color-background: rgb(40, 31, 31);
-    --color-dark-text: black;
-    --color-link: rgb(181, 82, 82);
+    --color-light-text: rgb(157, 229, 255);
+    --color-background: rgb(0, 0, 0);
+    --color-dark-text: rgb(54, 54, 54);
+    --color-link: rgb(128, 156, 255);
+
+
 }
+
+/* default colors: 
+    cool asthetic to replicate the stars (world builder)
+*/
+
+/* default fonts: 
+    headers - anta
+    body - iceland 
+*/

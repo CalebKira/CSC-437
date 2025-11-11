@@ -7,11 +7,11 @@ body {
 }
 
 h1{
-    background-color: rgb(86, 71, 71);
+    background-color: rgb(7, 28, 224);
 }
 
 h2 {
-    background-color: rgb(225, 217, 131);
+    background-color: rgb(131, 225, 184);
     color: var(--color-dark-text);
 }
 
