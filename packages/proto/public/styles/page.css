@@ -16,7 +16,6 @@ h1{
 
 h2 {
     background-color: var(--color-h2);
-    color: var(--color-dark-text);
     font-family: var(--font-header-family);
     font-weight: 650;
 }
