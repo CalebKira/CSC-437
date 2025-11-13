@@ -36,3 +36,13 @@ input {
 textarea {
     color: var(--color-dark-text);
 }
+
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    color: var(--color-dark-text);
+    fill: currentColor;
+}
