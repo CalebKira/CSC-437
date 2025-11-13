@@ -14,10 +14,16 @@ h1{
     font-weight: 900;
 }
 
-h2 {
+h2{
     background-color: var(--color-h2);
     font-family: var(--font-header-family);
-    font-weight: 650;
+    font-weight: 700;
+}
+
+h3 {
+    background-color: var(--color-h3);
+    font-family: var(--font-header-family);
+    font-weight: 500;
 }
 
 a {
