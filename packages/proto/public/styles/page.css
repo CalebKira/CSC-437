@@ -27,7 +27,8 @@ h3 {
 }
 
 a {
-    color:var(--color-link);
+    color: var(--color-link);
+    text-decoration: none;
 }
 
 button {
@@ -49,5 +50,23 @@ svg.icon {
     width: 2em;
     vertical-align: top;
     color: var(--color-dark-text);
-    fill: currentColor;
+    fill: var(--color-link);
+}
+
+
+/* specifically for the top bar */
+div.header{
+    display: flex;
+    background-color: var(--color-background);
+    margin: 10px;
+}
+
+div.header a{
+    font-family: var(--font-header-family);
+    font-size: 15px;
+}
+
+#home{
+    margin-right: auto; 
+    font-size: 20px;
 }
