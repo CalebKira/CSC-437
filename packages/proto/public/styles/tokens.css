@@ -10,6 +10,10 @@
     --font-body-family: "Quantico", sans-serif;
     --font-body-weight: 400;
     --font-header-family: "Orbitron", sans-serif;
+
+    --nav-spacing: 10px;
+    --nav-logo-font-size: 20px;
+    --nav-other-font-size: 15px;
 }
 
 /* default colors: 

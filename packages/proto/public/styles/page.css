@@ -54,19 +54,20 @@ svg.icon {
 }
 
 
-/* specifically for the top bar */
+/* NAV BAR */
 div.header{
     display: flex;
     background-color: var(--color-background);
-    margin: 10px;
 }
 
 div.header a{
     font-family: var(--font-header-family);
-    font-size: 15px;
+    font-size: var(--nav-other-font-size);
+    margin: var(--nav-spacing);
 }
 
-#home{
+#logo{
+    /* the margin right makes only the logo left */
     margin-right: auto; 
-    font-size: 20px;
+    font-size: var(--nav-logo-font-size);
 }
