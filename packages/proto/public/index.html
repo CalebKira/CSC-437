@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8" />
         
-        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="./styles/reset.css" />
 
-        <link rel="stylesheet" href="/styles/page.css" />
-        <link rel="stylesheet" href="/styles/tokens.css" />
+        <link rel="stylesheet" href="./styles/page.css" />
+        <link rel="stylesheet" href="./styles/tokens.css" />
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,84 +40,90 @@
             </a>
         </div> <br>
 
-        <!-- Side Bar -->
-        <div class="sidebar">
-            <a href="./post.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_post" />
-                </svg>
-                Post
-            </a><br>
-
-            <a href="./share.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_share" />
-                </svg>
-                Share
-            </a><br>
-
-            <a href="./writing.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_personal" />
-                </svg>
-                Create
-            </a>
-        </div>
-        <br>
-
-
-        <h2>My Writing</h2> <br>
+        <h2 class="page-title">My Writing</h2>
 
         <!-- Be in grid form -->
-        <h3>
-            <svg class="icon">
-                <use href="./icons/page_icons.svg#icon_character" />
-            </svg>
-            Characters
-        </h3>
-        <ul>
-            <li><a href="./writing.html">Character 1</a></li>
-            <li><a href="./writing.html">Character 2</a></li>
-            <li><a href="./writing.html">Character 3</a></li>
-        </ul> <br>
-        
-        <h3>
-            <svg class="icon">
-                <use href="./icons/page_icons.svg#icon_setting" />
-            </svg>
-            Settings
-        </h3>
-        <ul>
-            <li><a href="./writing.html">Setting 1</a></li>
-            <li><a href="./writing.html">Setting 2</a></li>
-            <li><a href="./writing.html">Setting 3</a></li>
-        </ul> <br>
+        <div class="grid">
 
-        <h3>
-            <svg class="icon">
-                <use href="./icons/page_icons.svg#icon_plot" />
-            </svg>
-            Plots
-        </h3>
-        <ul>
-            <li><a href="./writing.html">Plot 1</a></li>
-            <li><a href="./writing.html">Plot 2</a></li>
-            <li><a href="./writing.html">Plot 3</a></li>
-        </ul>
+            <!-- Side Bar -->
+            <div class="sidebar">
+                <a href="./post.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_post" />
+                    </svg>
+                    Post
+                </a><br>
 
-        <h3>
-            <svg class="icon">
-                <use href="./icons/page_icons.svg#icon_worldbuild" />
-            </svg>
-            Worlds
-        </h3>
-        <ul>
-            <li><a href="./writing.html">World 1</a></li>
-            <li><a href="./writing.html">World 2</a></li>
-            <li><a href="./writing.html">World 3</a></li>
-        </ul>
+                <a href="./share.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_share" />
+                    </svg>
+                    Share
+                </a><br>
 
+                <a href="./writing.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_personal" />
+                    </svg>
+                    Create
+                </a>
+            </div>
 
+            <div class="characters">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_character" />
+                    </svg>
+                    Characters
+                </h3>
+                <ul>
+                    <li><a href="./writing.html">Character 1</a></li>
+                    <li><a href="./writing.html">Character 2</a></li>
+                    <li><a href="./writing.html">Character 3</a></li>
+                </ul>
+            </div>
+            <div class="settings">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_setting" />
+                    </svg>
+                    Settings
+                </h3>
+                <ul>
+                    <li><a href="./writing.html">Setting 1</a></li>
+                    <li><a href="./writing.html">Setting 2</a></li>
+                    <li><a href="./writing.html">Setting 3</a></li>
+                </ul> 
+            </div>
+
+            <div class="plots">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_plot" />
+                    </svg>
+                    Plots
+                </h3>
+                <ul>
+                    <li><a href="./writing.html">Plot 1</a></li>
+                    <li><a href="./writing.html">Plot 2</a></li>
+                    <li><a href="./writing.html">Plot 3</a></li>
+                </ul> 
+            </div>
+
+            <div class="worlds">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_worldbuild" />
+                    </svg>
+                    Worlds
+                </h3>
+                <ul>
+                    <li><a href="./writing.html">World 1</a></li>
+                    <li><a href="./writing.html">World 2</a></li>
+                    <li><a href="./writing.html">World 3</a></li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
 

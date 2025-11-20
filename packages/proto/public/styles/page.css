@@ -71,3 +71,39 @@ div.header a{
     margin-right: auto; 
     font-size: var(--nav-logo-font-size);
 }
+
+
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: 
+        "card card sidebar";
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.characters.settings.plots.worlds {
+    grid-area: card;
+
+}
+
+.characters {
+    border: 1px solid rgb(255, 255, 255);
+}
+.settings {
+    border: 1px solid rgb(255, 255, 255);
+}
+.plots {
+    border: 1px solid rgb(255, 255, 255);
+}
+.worlds {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
