@@ -8,26 +8,55 @@
         <link rel="stylesheet" href="./styles/page.css" />
         <link rel="stylesheet" href="./styles/tokens.css" />
 
+        <link rel="stylesheet" href="./styles/writing.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
     </head>
     
     <body>
-        <h1>Writing</h1>
-        <a href="./index.html">My Writing</a><br>
+        <!-- Navigation Bar -->
+        <div class="header">
+            <!-- FUTURE: should reference the home page when made -->
+            <a id="logo" href="">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_logo" />
+                </svg>
+                World Builder
+            </a>
+            
+            <a href="./categories.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_search" />
+                </svg>
+                Search
+            </a>
 
-        <h2><a href="./categories.html">Category: Character</a></h2>
+            <a href="./index.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Personal
+            </a>
+        </div> <br>
 
-        <form>
-            <label for="Name">Name:</label>
-            <input type="text" id="Name" value="Sickle"><br>
-            <label for="Description">Description:</label>
-            <textarea id="Description">Taller, fair skin, red eyes</textarea><br>
-            <label for="Backstory">Backstory:</label>
-            <textarea id="Backstory">He is a bit crazed due to losting his family.</textarea><br><br>
-        </form>
+        <h2>Writing</h2><br>
 
-        <button>Save</button>
+        <div class="grid">
+            <h3>Category: Character</h3>
+
+            <form>
+                <label for="Name">Name:</label>
+                <input type="text" id="Name" value="Sickle"><br>
+                <label for="Description">Description:</label>
+                <textarea id="Description">Taller, fair skin, red eyes</textarea><br>
+                <label for="Backstory">Backstory:</label>
+                <textarea id="Backstory">He is a bit crazed due to losting his family.</textarea><br><br>
+            </form>
+
+            <button>Save</button>
+        </div>
+        
     </body>
 </html>

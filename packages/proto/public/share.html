@@ -8,52 +8,79 @@
         <link rel="stylesheet" href="./styles/page.css" />
         <link rel="stylesheet" href="./styles/tokens.css" />
 
+        <link rel="stylesheet" href="./styles/share.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
     </head>
     
     <body>
-        <h1>Share</h1>
-        <a href="./index.html">My Writing</a><br>
+        <!-- Navigation Bar -->
+        <div class="header">
+            <!-- FUTURE: should reference the home page when made -->
+            <a id="logo" href="">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_logo" />
+                </svg>
+                World Builder
+            </a>
+            
+            <a href="./categories.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_search" />
+                </svg>
+                Search
+            </a>
 
-        <h2>Choose a Friend to Share to</h2>
-        <form>
-            <input type="checkbox" id="Friend1">
-            <label for="Friend1">Friend 1</label><br>
-            <input type="checkbox" id="Friend2" checked>
-            <label for="Friend2">Friend 2</label><br>
-            <input type="checkbox" id="Friend3">
-            <label for="Friend3">Friend 3</label><br>
-        </form>
-
-        <h2>Choose a Category to Share</h2>
-        <form>
-            <input type="checkbox" id="Character" checked>
-            <label for="Character">Character</label><br>
-            <input type="checkbox" id="Setting">
-            <label for="Setting">Setting</label><br>
-            <input type="checkbox" id="Plot">
-            <label for="Plot">Plot</label><br>
-            <input type="checkbox" id="World">
-            <label for="World">World</label><br>
-        </form>
-
-        <h2>Choose What Character to Post!</h2>
-        <form>
-            <input type="checkbox" id="Character1">
-            <label for="Character1">Character 1</label><br>
-            <input type="checkbox" id="Character2">
-            <label for="Character2">Character 2</label><br>
-            <input type="checkbox" id="Character3" checked>
-            <label for="Character3">Character 3</label><br>
-        </form>
+            <a href="./index.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Personal
+            </a>
+        </div> <br>
         
-        <h2>Write a Message!</h2>
-        <input type="text" value="Let me know what you think!"><br><br><br>
+        <h2>Share</h2>
 
-        <button>Share!</button>
+        <div class="grid">
+            <h3>Choose a Friend to Share to</h3>
+            <form>
+                <input type="checkbox" id="Friend1">
+                <label for="Friend1">Friend 1</label><br>
+                <input type="checkbox" id="Friend2" checked>
+                <label for="Friend2">Friend 2</label><br>
+                <input type="checkbox" id="Friend3">
+                <label for="Friend3">Friend 3</label><br>
+            </form>
 
+            <h3>Choose a Category to Share</h3>
+            <form>
+                <input type="checkbox" id="Character" checked>
+                <label for="Character">Character</label><br>
+                <input type="checkbox" id="Setting">
+                <label for="Setting">Setting</label><br>
+                <input type="checkbox" id="Plot">
+                <label for="Plot">Plot</label><br>
+                <input type="checkbox" id="World">
+                <label for="World">World</label><br>
+            </form>
+
+            <h3>Choose What Character to Post!</h3>
+            <form>
+                <input type="checkbox" id="Character1">
+                <label for="Character1">Character 1</label><br>
+                <input type="checkbox" id="Character2">
+                <label for="Character2">Character 2</label><br>
+                <input type="checkbox" id="Character3" checked>
+                <label for="Character3">Character 3</label><br>
+            </form>
+            
+            <h3>Write a Message!</h3>
+            <input type="text" value="Let me know what you think!"><br><br>
+
+            <button>Share!</button>
+        </div>
 
     </body>
 </html>

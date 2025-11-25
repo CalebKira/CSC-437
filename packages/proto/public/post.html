@@ -8,43 +8,72 @@
         <link rel="stylesheet" href="./styles/page.css" />
         <link rel="stylesheet" href="./styles/tokens.css" />
 
+        <link rel="stylesheet" href="./styles/post.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
     </head>
     
     <body>
-        <h1><a href="./categories.html">Post</a></h1>
-        <a href="./index.html">My Writing</a><br>
+        <!-- Navigation Bar -->
+        <div class="header">
+            <!-- FUTURE: should reference the home page when made -->
+            <a id="logo" href="">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_logo" />
+                </svg>
+                World Builder
+            </a>
+            
+            <a href="./categories.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_search" />
+                </svg>
+                Search
+            </a>
 
-
-        <h2>Choose a Category to Post to</h2>
-        <form>
-            <input type="checkbox" id="Character" checked>
-            <label for="Character">Character</label><br>
-            <input type="checkbox" id="Setting">
-            <label for="Setting">Setting</label><br>
-            <input type="checkbox" id="Plot">
-            <label for="Plot">Plot</label><br>
-            <input type="checkbox" id="World">
-            <label for="World">World</label><br>
-        </form>
-
-        <h2>Choose What Character to Post!</h2>
-        <form>
-            <input type="checkbox" id="Character1">
-            <label for="Character1">Character 1</label><br>
-            <input type="checkbox" id="Character2" checked>
-            <label for="Character2">Character 2</label><br>
-            <input type="checkbox" id="Character3">
-            <label for="Character3">Character 3</label><br>
-        </form>
+            <a href="./index.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Personal
+            </a>
+        </div> <br>
         
-        <h2>Write a Caption!</h2>
-        <input type="text" value="Hope you like!"><br><br><br>
+        <h2>Post</h2>
+        <!-- <a href="./index.html">My Writing</a><br> -->
 
-        <button>Post!</button>
 
+        <div class="grid">
+            <h3>Choose a Category to Post to</h3>
+            <form>
+                <input type="checkbox" id="Character" checked>
+                <label for="Character">Character</label><br>
+                <input type="checkbox" id="Setting">
+                <label for="Setting">Setting</label><br>
+                <input type="checkbox" id="Plot">
+                <label for="Plot">Plot</label><br>
+                <input type="checkbox" id="World">
+                <label for="World">World</label><br>
+            </form>
+
+            <h3>Choose What Character to Post!</h3>
+            <form>
+                <input type="checkbox" id="Character1">
+                <label for="Character1">Character 1</label><br>
+                <input type="checkbox" id="Character2" checked>
+                <label for="Character2">Character 2</label><br>
+                <input type="checkbox" id="Character3">
+                <label for="Character3">Character 3</label><br>
+            </form>
+            
+            <h3>Write a Caption!</h3>
+            <input type="text" value="Hope you like!"><br><br>
+
+            <button>Post!</button>
+        </div>
+        <!-- make this into a grid layout. copy paste -->
 
     </body>
 </html>

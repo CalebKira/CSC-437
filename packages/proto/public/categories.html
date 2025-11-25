@@ -8,53 +8,75 @@
         <link rel="stylesheet" href="./styles/page.css" />
         <link rel="stylesheet" href="./styles/tokens.css" />
 
+        <link rel="stylesheet" href="./styles/categories.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
     </head>
     
     <body>
-        <h1>Public Writing</h1>
+        <!-- Navigation Bar -->
+        <div class="header">
+            <!-- FUTURE: should reference the home page when made -->
+            <a id="logo" href="">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_logo" />
+                </svg>
+                World Builder
+            </a>
+            
+            <a href="./categories.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_search" />
+                </svg>
+                Search
+            </a>
 
-        <a href="./index.html">My Writing</a><br>
-        <a href="./post.html">Post Your Writing</a><br>
-        <a href="./share.html">Or Share it With Friends</a><br>
+            <a href="./index.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Personal
+            </a>
+        </div> <br>
 
-        <h2><a href="">Character Ideas</a></h2>
-        <!-- link to the Character category public page -->
-        <h4>Popular Characters</h4>
-        <ul>
-            <li><a href="">Character 1</a></li>
-            <li><a href="">Character 2</a></li>
-            <li><a href="">Character 3</a></li>
-        </ul>
-        
-        <h2><a href="">Setting Ideas</a></h2>
-        <!-- link to the Setting category public page -->
-        <h4>Popular Settings</h4>
-        <ul>
-            <li><a href="">Setting 1</a></li>
-            <li><a href="">Setting 2</a></li>
-            <li><a href="">Setting 3</a></li>
-        </ul>
+        <h2>Public Writing</h2><br>
 
-        <h2><a href="">Plot Ideas</a></h2>
-        <!-- link to the Plot category public page -->
-        <h4>Popular Plots</h4>
-        <ul>
-            <li><a href="">Plot 1</a></li>
-            <li><a href="">Plot 2</a></li>
-            <li><a href="">Plot 3</a></li>
-        </ul>
+        <div class="grid">
+            <h3>Popular Characters</h3>
+            <!-- link to the Character category public page -->
+            <ul>
+                <li><a href="">Character 1</a></li>
+                <li><a href="">Character 2</a></li>
+                <li><a href="">Character 3</a></li>
+            </ul>
+            
+            <h3>Popular Settings</h3>
+            <!-- link to the Setting category public page -->
+            <ul>
+                <li><a href="">Setting 1</a></li>
+                <li><a href="">Setting 2</a></li>
+                <li><a href="">Setting 3</a></li>
+            </ul>
 
-        <h2><a href="">World Ideas</a></h2>
-        <!-- link to the Plot category public page -->
-        <h4>Popular Worlds</h4>
-        <ul>
-            <li><a href="">World 1</a></li>
-            <li><a href="">World 2</a></li>
-            <li><a href="">World 3</a></li>
-        </ul>
-        
+            <h3>Popular Plots</h3>
+            <!-- link to the Plot category public page -->
+            <ul>
+                <li><a href="">Plot 1</a></li>
+                <li><a href="">Plot 2</a></li>
+                <li><a href="">Plot 3</a></li>
+            </ul>
+
+            <h3>Popular Worlds</h3>
+            <!-- link to the Plot category public page -->
+            <ul>
+                <li><a href="">World 1</a></li>
+                <li><a href="">World 2</a></li>
+                <li><a href="">World 3</a></li>
+            </ul>
+        </div>
+
+
     </body>
 </html>
