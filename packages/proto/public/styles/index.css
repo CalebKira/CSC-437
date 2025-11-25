@@ -7,8 +7,8 @@
     grid-template-areas: 
         "characters settings sidebar"
         "plots worlds sidebar";
-    gap: 20px;
-    padding: 10px;
+    gap: var(--grid-spacing);
+    padding: var(--padding);
 }
 
 .characters, .settings, .plots, .worlds {
