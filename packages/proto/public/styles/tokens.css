@@ -4,7 +4,7 @@
     --color-dark-text: rgb(54, 54, 54);
     --color-link: rgb(128, 156, 255);
     --color-h1: rgb(62, 70, 84);
-    --color-h2: rgb(35, 43, 112);
+    --color-h2: var(--color-background);
     --color-h3: rgb(23, 11, 84);
 
     --font-body-family: "Quantico", sans-serif;

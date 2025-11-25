@@ -58,6 +58,9 @@ svg.icon {
 div.header{
     display: flex;
     background-color: var(--color-background);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 div.header a{
