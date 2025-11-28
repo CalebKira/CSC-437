@@ -2,16 +2,17 @@
 
 /* GRID */
 .grid {
+    --col-num: 4;
+    
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-    grid-template-areas: 
-        "characters settings plots worlds sidebar";
+    grid-template-columns: repeat(var(--col-num), 1fr);
     gap: var(--grid-spacing);
     padding: var(--padding);
 }
 
 .characters, .settings, .plots, .worlds {
     border: 1px solid var(--color-light-text);
+    grid-column: span 1;
 }
 
 .characters ul, .settings ul, .plots ul, .worlds ul{
@@ -20,75 +21,28 @@
     padding-left: 0;
 }
 
-.characters {
-    grid-area: characters;
-}
-.settings {
-    grid-area: settings;
-}
-.plots {
-    grid-area: plots;
-}
-.worlds {
-    grid-area: worlds;
-}
 
 .sidebar a{
-    grid-area: sidebar;
+    /* grid-area: sidebar; */
     font-family: var(--font-header-family);
 }
 
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75rem) {
     .grid {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr 1fr;
-        grid-template-areas: 
-            "characters settings plots sidebar"
-            "worlds worlds worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
+        --col-num: 3;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 55rem) {
     .grid {
-        display: grid;
-        grid-template-columns: 2fr 2fr 1fr;
-        grid-template-areas: 
-            "characters settings sidebar"
-            "plots worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
+        --col-num: 2;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 35rem) {
     .grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
-            "characters sidebar"
-            "settings sidebar"
-            "plots sidebar"
-            "worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr;
-        grid-template-areas: 
-            "sidebar"
-            "characters"
-            "settings"
-            "plots"
-            "worlds";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
+        --col-num: 1;
     }
 }
