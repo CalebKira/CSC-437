@@ -46,30 +46,34 @@
 
 
         <div class="grid">
-            <h3>Choose a Category to Post to</h3>
-            <form>
-                <input type="checkbox" id="Character" checked>
-                <label for="Character">Character</label><br>
-                <input type="checkbox" id="Setting">
-                <label for="Setting">Setting</label><br>
-                <input type="checkbox" id="Plot">
-                <label for="Plot">Plot</label><br>
-                <input type="checkbox" id="World">
-                <label for="World">World</label><br>
-            </form>
+            <h3>
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_post" />
+                </svg>
+                Post Details:
+            </h3>
 
-            <h3>Choose What Character to Post!</h3>
-            <form>
-                <input type="checkbox" id="Character1">
-                <label for="Character1">Character 1</label><br>
-                <input type="checkbox" id="Character2" checked>
-                <label for="Character2">Character 2</label><br>
-                <input type="checkbox" id="Character3">
-                <label for="Character3">Character 3</label><br>
-            </form>
-            
-            <h3>Write a Caption!</h3>
-            <input type="text" value="Hope you like!"><br><br>
+            <div class="divider"></div>
+
+            <h4>Category:</h4>
+            <select>
+                <option value="Characters">Character</option>
+                <option value="Settings">Setting</option>
+                <option value="Plots">Plot</option>
+                <option value="Worlds">World</option>
+            </select>
+
+            <h4>File:</h4>
+            <select>
+                <option value="Character 1">Character 1</option>
+                <option value="Character 2">Character 2</option>
+                <option value="Character 3">Character 3</option>
+                <option value="Character 4">Character 4</option>
+            </select>
+
+            <h4>Write a Caption</h4>
+            <textarea placeholder="Write caption here"></textarea><br>
+
 
             <button>Post!</button>
         </div>

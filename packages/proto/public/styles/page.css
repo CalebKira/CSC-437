@@ -1,11 +1,9 @@
-* {
-    color: var(--color-light-text);
-    font-family: var(--font-body-family);
-    font-weight: var(--font-body-weight);
-}
 
 body {
     background-color: var(--color-background);
+    color: var(--color-light-text);
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-weight);
 }
 
 h1{
@@ -32,26 +30,14 @@ a {
     text-decoration: none;
 }
 
-button {
-    color: var(--color-dark-text);
-}
-
-input {
-    color: var(--color-dark-text);
-}
-
-textarea {
-    color: var(--color-dark-text);
-}
-
 
 svg.icon {
     display: inline;
     height: 2em;
     width: 2em;
     vertical-align: top;
-    color: var(--color-dark-text);
-    fill: var(--color-link);
+    color: inherit;
+    fill: currentColor;
 }
 
 

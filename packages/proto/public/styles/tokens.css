@@ -1,5 +1,8 @@
 :root{
-    --color-light-text: rgb(157, 229, 255);
+    --color-light-text:  rgb(214, 216, 253);
+    --color-light-text-2:rgb(157, 229, 255);
+    /* --color-light-text: rgb(157, 229, 255);
+    --color-light-text-2: rgb(255, 255, 255); */
     --color-background: rgb(0, 0, 0);
     --color-dark-text: rgb(54, 54, 54);
     --color-link: rgb(128, 156, 255);
@@ -13,7 +16,7 @@
 
     --nav-spacing: 10px;
     --nav-logo-font-size: 20px;
-    --nav-other-font-size: 15px;
+    --nav-other-font-size: 14px;
 
     --padding: 17px;
     --grid-spacing: 20px;

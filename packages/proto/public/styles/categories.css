@@ -22,13 +22,6 @@
 }
 
 
-.sidebar a{
-    /* grid-area: sidebar; */
-    font-family: var(--font-header-family);
-}
-
-
-
 @media screen and (max-width: 75rem) {
     .grid {
         --col-num: 3;

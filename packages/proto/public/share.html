@@ -44,40 +44,39 @@
         <h2>Share</h2>
 
         <div class="grid">
-            <h3>Choose a Friend to Share to</h3>
-            <form>
-                <input type="checkbox" id="Friend1">
-                <label for="Friend1">Friend 1</label><br>
-                <input type="checkbox" id="Friend2" checked>
-                <label for="Friend2">Friend 2</label><br>
-                <input type="checkbox" id="Friend3">
-                <label for="Friend3">Friend 3</label><br>
-            </form>
+            <h3>
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_share" />
+                </svg>
+                Share Details:
+            </h3>
+            <h4>Friend:</h4>
+            <select>
+                <option value="Friend 1">Friend 1</option>
+                <option value="Friend 2">Friend 2</option>
+                <option value="Friend 3">Friend 3</option>
+                <option value="Friend 4">Friend 4</option>
+            </select>
 
-            <h3>Choose a Category to Share</h3>
-            <form>
-                <input type="checkbox" id="Character" checked>
-                <label for="Character">Character</label><br>
-                <input type="checkbox" id="Setting">
-                <label for="Setting">Setting</label><br>
-                <input type="checkbox" id="Plot">
-                <label for="Plot">Plot</label><br>
-                <input type="checkbox" id="World">
-                <label for="World">World</label><br>
-            </form>
+            <h4>Category:</h4>
+            <select>
+                <option value="Characters">Character</option>
+                <option value="Settings">Setting</option>
+                <option value="Plots">Plot</option>
+                <option value="Worlds">World</option>
+            </select>
 
-            <h3>Choose What Character to Post!</h3>
-            <form>
-                <input type="checkbox" id="Character1">
-                <label for="Character1">Character 1</label><br>
-                <input type="checkbox" id="Character2">
-                <label for="Character2">Character 2</label><br>
-                <input type="checkbox" id="Character3" checked>
-                <label for="Character3">Character 3</label><br>
-            </form>
-            
-            <h3>Write a Message!</h3>
-            <input type="text" value="Let me know what you think!"><br><br>
+            <h4>File:</h4>
+            <select>
+                <option value="Character 1">Character 1</option>
+                <option value="Character 2">Character 2</option>
+                <option value="Character 3">Character 3</option>
+                <option value="Character 4">Character 4</option>
+            </select>
+
+            <h4>Write a Comment</h4>
+            <textarea placeholder="Write comment here"></textarea><br>
+
 
             <button>Share!</button>
         </div>

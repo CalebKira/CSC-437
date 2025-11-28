@@ -1,94 +1,41 @@
-/* MAKE SURE THIS IS SPECIFIC TO SHARE */
+/* MAKE SURE THIS IS SPECIFIC TO POST */
+
+h2{
+    text-align: center;
+}
+
+button {
+    color: var(--color-dark-text);
+}
+
+select {
+    background-color: var(--color-background);
+    color: var(--color-light-text-2);
+    font-family: var(--font-body-family);
+    width: 100%;
+}
+
+select option{
+    background-color: var(--color-background);
+    color: var(--color-light-text-2);
+}
+
+textarea {
+    background-color: var(--color-background);
+    color: var(--color-light-text-2);
+    width: 100%;
+}
+
+.divider{
+    border: 1px solid var(--color-light-text);
+    width: 100%;
+}
 
 /* GRID */
 .grid {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-    grid-template-areas: 
-        "characters settings plots worlds sidebar";
-    gap: var(--grid-spacing);
     padding: var(--padding);
-}
-
-.characters, .settings, .plots, .worlds {
     border: 1px solid var(--color-light-text);
-}
-
-.characters ul, .settings ul, .plots ul, .worlds ul{
-    place-items: center;
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.characters {
-    grid-area: characters;
-}
-.settings {
-    grid-area: settings;
-}
-.plots {
-    grid-area: plots;
-}
-.worlds {
-    grid-area: worlds;
-}
-
-.sidebar a{
-    grid-area: sidebar;
-    font-family: var(--font-header-family);
-}
-
-
-
-@media screen and (max-width: 1200px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr 2fr 2fr 1fr;
-        grid-template-areas: 
-            "characters settings plots sidebar"
-            "worlds worlds worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr 2fr 1fr;
-        grid-template-areas: 
-            "characters settings sidebar"
-            "plots worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
-            "characters sidebar"
-            "settings sidebar"
-            "plots sidebar"
-            "worlds sidebar";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 2fr;
-        grid-template-areas: 
-            "sidebar"
-            "characters"
-            "settings"
-            "plots"
-            "worlds";
-        gap: var(--grid-spacing);
-        padding: var(--padding);
-    }
+    width: 300px;
+    height: fit-content;
+    margin: auto;
 }
