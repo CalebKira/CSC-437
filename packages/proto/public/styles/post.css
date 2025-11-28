@@ -6,6 +6,8 @@ h2{
 
 button {
     color: var(--color-dark-text);
+    background-color: var(--color-light-text);
+    font-family: var(--font-body-family);
 }
 
 select {
