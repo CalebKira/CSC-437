@@ -17,6 +17,7 @@ h2{
     font-family: var(--font-header-family);
     font-weight: 700;
     padding-left: var(--padding);
+    /* padding because this is always the title */
 }
 
 h3 {

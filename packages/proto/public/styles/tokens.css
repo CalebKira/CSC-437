@@ -1,6 +1,6 @@
 :root{
     --color-light-text:  rgb(214, 216, 253);
-    --color-light-text-2:rgb(255, 175, 188);
+    --color-light-text-2:rgb(167, 154, 255);
     /* --color-light-text: rgb(157, 229, 255);
     --color-light-text-2: rgb(255, 255, 255); */
     --color-background: rgb(0, 0, 0);
@@ -20,6 +20,7 @@
 
     --padding: 17px;
     --grid-spacing: 20px;
+    --flex-spacing: 10px;
 }
 
 /* default colors: 
