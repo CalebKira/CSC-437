@@ -1,4 +1,4 @@
-
+/* Index page organization */
 
 /* GRID */
 .grid {
@@ -39,7 +39,7 @@
 }
 
 
-
+/* checking the size and organizing the look depending */
 @media screen and (max-width: 60rem) {
     .grid {
         display: grid;
@@ -47,6 +47,7 @@
         grid-template-areas: 
             "characters settings plots sidebar"
             "worlds worlds worlds sidebar";
+            /* hardcoded because of the side bar */
         gap: var(--grid-spacing);
         padding: var(--padding);
     }
