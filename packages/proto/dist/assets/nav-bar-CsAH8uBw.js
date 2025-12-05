@@ -145,7 +145,7 @@ Expecting `+ut.join(", ")+", got '"+(this.terminals_[b]||b)+"'":kt="Parse error 
     }
 `,Qi={styles:Zi},Qt=class Qt extends et{render(){return zi`
         <div class="header">
-            <a id="logo" href="">
+            <a id="logo" href="./home.html">
                 <svg class="icon">
                     <use href="./icons/page_icons.svg#icon_logo" />
                 </svg>

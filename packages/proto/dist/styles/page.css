@@ -7,11 +7,6 @@ body {
     font-weight: var(--font-body-weight);
 }
 
-h1{
-    background-color: var(--color-h1);
-    font-family: var(--font-header-family);
-    font-weight: 900;
-}
 
 h2{
     background-color: var(--color-h2);

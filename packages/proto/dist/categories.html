@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="./styles/reset.css" />
+
+        <link rel="stylesheet" href="./styles/page.css" />
+        <link rel="stylesheet" href="./styles/tokens.css" />
+
+        <link rel="stylesheet" href="./styles/categories.css" />
+
+        <script src="./darkmode.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
+        
+
+      <script type="module" crossorigin src="/assets/categories-G-s4Est3.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/nav-bar-CsAH8uBw.js">
+      <link rel="modulepreload" crossorigin href="/assets/writing-card-PYA9AVUd.js">
+    </head>
+    
+    <body>
+        <!-- Navigation Bar -->
+        <nav-bar></nav-bar>
+
+        <h2>Public Writing</h2>
+
+        <div class="grid">
+
+            <writing-card icon="icon_character" title="Popular Characters" type="characters" class="characters">
+                <!-- defining type for the internal css and class for grid external stuff -->
+                <li><a href="">Character 1</a></li>
+                <li><a href="">Character 2</a></li>
+                <li><a href="">Character 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_setting" title="Popular Settings" type="settings" class="settings">
+                <li><a href="">Setting 1</a></li>
+                <li><a href="">Setting 2</a></li>
+                <li><a href="">Setting 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_plot" title="Popular Plots" type="plots" class="plots">
+                <li><a href="">Plot 1</a></li>
+                <li><a href="">Plot 2</a></li>
+                <li><a href="">Plot 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_worldbuild" title="Popular Worlds" type="worlds" class="worlds">
+                <li><a href="">World 1</a></li>
+                <li><a href="">World 2</a></li>
+                <li><a href="">World 3</a></li>
+            </writing-card>
+
+        </div><br>
+
+        <label id="dark">
+            <input type="checkbox" autocomplete="off" id="darkmode" />
+            Light Mode
+        </label>
+
+
+    </body>
+</html>

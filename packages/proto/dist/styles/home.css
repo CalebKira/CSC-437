@@ -1,0 +1,16 @@
+h1{
+    background-color: var(--color-h1);
+    font-family: var(--font-header-family);
+    font-weight: 900;
+    padding-left: var(--padding);
+    font-size: 10em;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--flex-spacing) * 10);
+    padding: var(--padding);
+    height: fit-content;
+    margin: auto;
+}
