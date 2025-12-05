@@ -13,6 +13,7 @@ export default defineConfig({
             sub: resolve(__dirname, 'post.html'),
             sub: resolve(__dirname, 'share.html'),
             sub: resolve(__dirname, 'writing.html'),
+            sub: resolve(__dirname, 'home.html'),
         },
         },
     },

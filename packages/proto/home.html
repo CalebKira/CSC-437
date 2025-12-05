@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="./styles/reset.css" />
+
+        <link rel="stylesheet" href="./styles/page.css" />
+        <link rel="stylesheet" href="./styles/tokens.css" />
+
+        <link rel="stylesheet" href="./styles/home.css" />
+        
+        <script src="./darkmode.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
+    
+        <script type="module">
+            import { define } from "@calpoly/mustang";
+            import { NavBar } from "/src/nav-bar.ts";
+
+            define({
+                "nav-bar": NavBar
+            });
+        </script>
+    </head>
+    
+    <body>
+        <nav-bar></nav-bar> <br><br><br><br><br><br><br><br><br>
+        
+        <!-- <div class="flex">
+            <h1>Welcome to <br>World Builder</h1>
+
+            <img src="/icons/spaceship.png" alt="spaceship" width="1000">
+            
+            <h1><a href="./categories.html">Search</a> Other <br>Worlds</h1>
+
+        </div> -->
+        <h1>Welcome to World Builder</h1> 
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h1><a href="./categories.html">Search</a> Other Worlds</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h1>Create <a href="./index.html">Personal</a> Universes</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <br>
+        
+        <label id="dark">
+            <input type="checkbox" autocomplete="off" id="darkmode" />
+            Light Mode
+        </label>
+
+    </body>
+</html>

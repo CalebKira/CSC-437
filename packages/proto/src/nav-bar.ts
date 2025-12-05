@@ -7,7 +7,7 @@ export class NavBar extends LitElement {
         /* FUTURE: add a reference to the home page here */
         return html`
         <div class="header">
-            <a id="logo" href="">
+            <a id="logo" href="./home.html">
                 <svg class="icon">
                     <use href="./icons/page_icons.svg#icon_logo" />
                 </svg>
