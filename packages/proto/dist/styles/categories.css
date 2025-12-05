@@ -1,0 +1,41 @@
+/* MAKE SURE THIS IS SPECIFIC TO CATEGORIES */
+
+/* GRID */
+.grid {
+    --col-num: 4;
+    
+    display: grid;
+    grid-template-columns: repeat(var(--col-num), 1fr);
+    gap: var(--grid-spacing);
+    padding: var(--padding);
+}
+
+.characters, .settings, .plots, .worlds {
+    border: 1px solid var(--color-light-text);
+    grid-column: span 1;
+}
+
+.characters ul, .settings ul, .plots ul, .worlds ul{
+    place-items: center;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+@media screen and (max-width: 75rem) {
+    .grid {
+        --col-num: 3;
+    }
+}
+
+@media screen and (max-width: 55rem) {
+    .grid {
+        --col-num: 2;
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    .grid {
+        --col-num: 1;
+    }
+}

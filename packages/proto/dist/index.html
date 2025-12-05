@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="./styles/reset.css" />
+
+        <link rel="stylesheet" href="./styles/page.css" />
+        <link rel="stylesheet" href="./styles/tokens.css" />
+
+        <link rel="stylesheet" href="./styles/index.css" />
+
+        <script src="./darkmode.js" defer></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">      
+    
+        
+      <script type="module" crossorigin src="/assets/main-BBc6Bl0g.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/nav-bar-BG7AcoGY.js">
+    </head>
+    
+    <body>
+
+        <!-- Navigation Bar -->
+        <!-- <div class="header">
+            <a id="logo" href="">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_logo" />
+                </svg>
+                World Builder
+            </a>
+
+            <label>
+                <input type="checkbox" autocomplete="off" id="darkmode" />
+                Light Mode
+            </label>
+            
+            <a href="./categories.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_search" />
+                </svg>
+                Search
+            </a>
+
+            <a href="./index.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Personal
+            </a>
+        </div> <br> -->
+        <nav-bar></nav-bar>
+
+        <h2 class="page-title">My Writing</h2>
+
+        <!-- Be in grid form -->
+        <div class="grid">
+
+            <!-- Side Bar -->
+            <div class="sidebar">
+                <a href="./post.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_post" />
+                    </svg>
+                    Post
+                </a><br>
+
+                <a href="./share.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_share" />
+                    </svg>
+                    Share
+                </a><br>
+
+                <a href="./writing.html">
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_personal" />
+                    </svg>
+                    Create
+                </a>
+            </div>
+
+            <!-- All the rest of the cards -->
+            <!-- <div class="characters">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_character" />
+                    </svg>
+                    Characters
+                </h3>
+                <ul>
+                    <li><a href="./writing.html">Character 1</a></li>
+                    <li><a href="./writing.html">Character 2</a></li>
+                    <li><a href="./writing.html">Character 3</a></li>
+                </ul>
+            </div> -->
+
+            <writing-card icon="icon_character" title="Characters" type="characters" class="characters">
+                <!-- defining type for the internal css and class for grid external stuff -->
+                <li><a href="./writing.html">Character 1</a></li>
+                <li><a href="./writing.html">Character 2</a></li>
+                <li><a href="./writing.html">Character 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_setting" title="Settings" type="settings" class="settings">
+                <li><a href="./writing.html">Setting 1</a></li>
+                <li><a href="./writing.html">Setting 2</a></li>
+                <li><a href="./writing.html">Setting 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_plot" title="Plots" type="plots" class="plots">
+                <li><a href="./writing.html">Plot 1</a></li>
+                <li><a href="./writing.html">Plot 2</a></li>
+                <li><a href="./writing.html">Plot 3</a></li>
+            </writing-card>
+
+            <writing-card icon="icon_worldbuild" title="Worlds" type="worlds" class="worlds">
+                <li><a href="./writing.html">World 1</a></li>
+                <li><a href="./writing.html">World 2</a></li>
+                <li><a href="./writing.html">World 3</a></li>
+            </writing-card>
+
+        </div><br>
+
+        <label id="dark">
+            <input type="checkbox" autocomplete="off" id="darkmode" />
+            Light Mode
+        </label>
+    </body>
+</html>
+
+

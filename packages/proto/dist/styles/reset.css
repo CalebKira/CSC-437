@@ -1,0 +1,12 @@
+/* makes sure everything is reset to have full control of the look */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+}
