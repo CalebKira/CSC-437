@@ -1,5 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import reset from "./styles/reset.css.ts";
+
 
 export class WritingCard extends LitElement {
     @property({ type: String }) type?: string;
@@ -7,11 +9,7 @@ export class WritingCard extends LitElement {
     @property({ type: String}) title = "Writing Card";
     /* defining the properties I want as attributes in custom element */
     
-    constructor(){
-        super();
-        /* ADD THE REST OF THE CONSTRUCTOR */
-    }
-    
+    /* don't need a cconstructor */
     override render() {
         return html`
         <div class="${this.type}">
@@ -29,7 +27,7 @@ export class WritingCard extends LitElement {
     }
     /* using a slot to hold the links to all the characters */
 
-    static styles = css`
+    static styles = [reset.styles, css`
         h3 {
             background-color: var(--color-h3);
             font-family: var(--font-header-family);
@@ -59,6 +57,6 @@ export class WritingCard extends LitElement {
             list-style-type: none;
             padding-left: 0;
         }
-    `;
+    `];
     /* defining the CSS of this custom component specifically */
 }

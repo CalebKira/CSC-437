@@ -15,38 +15,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
+    
+        <script type="module">
+            import { define } from "@calpoly/mustang";
+            import { NavBar } from "/src/nav-bar.ts";
+
+            define({
+                "nav-bar": NavBar
+            });
+        </script>
     </head>
     
     <body>
-        <!-- Navigation Bar -->
-        <div class="header">
-            <!-- FUTURE: should reference the home page when made -->
-            <a id="logo" href="">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_logo" />
-                </svg>
-                World Builder
-            </a>
-
-            <label>
-                <input type="checkbox" autocomplete="off" id="darkmode" />
-                Light Mode
-            </label>
-  
-            <a href="./categories.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_search" />
-                </svg>
-                Search
-            </a>
-
-            <a href="./index.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_profile" />
-                </svg>
-                Personal
-            </a>
-        </div> <br>
+        <nav-bar></nav-bar>
 
         <h2>Writing</h2>
 
@@ -61,7 +42,12 @@
             </form>
 
             <button>Save</button>
-        </div>
+        </div><br>
+        
+        <label id="dark">
+            <input type="checkbox" autocomplete="off" id="darkmode" />
+            Light Mode
+        </label>
 
     </body>
 </html>

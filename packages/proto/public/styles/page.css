@@ -64,9 +64,9 @@ div.header a{
     font-size: var(--nav-logo-font-size);
 }
 
-div.header label{
+#dark {
     font-family: var(--font-header-family);
     font-size: var(--nav-other-font-size);
     color: var(--color-link);
-    margin: var(--nav-spacing); 
+    padding-left: var(--padding);
 }
