@@ -14,6 +14,7 @@ export default defineConfig({
                 share: resolve(__dirname, 'share.html'),
                 writing: resolve(__dirname, 'writing.html'),
                 home: resolve(__dirname, 'home.html'),
+                login: resolve(__dirname, 'login.html'),
             },
         },
     },
