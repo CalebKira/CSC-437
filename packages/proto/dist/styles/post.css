@@ -34,6 +34,15 @@ textarea {
     background-color: var(--color-background);
     color: var(--color-light-text-2);
     width: 100%;
+    resize: none;
+    font-family: var(--font-body-family);
+}
+
+.grid input {
+    background-color: var(--color-background);
+    color: var(--color-light-text-2);
+    width: 100%;
+    font-family: var(--font-body-family);
 }
 
 .divider{
