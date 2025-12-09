@@ -23,9 +23,16 @@ export class NavBar extends LitElement {
 
             <a href="./index.html">
                 <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_profile" />
+                    <use href="./icons/page_icons.svg#icon_private" />
                 </svg>
                 Personal
+            </a>
+
+            <a href="./login.html">
+                <svg class="icon">
+                    <use href="./icons/page_icons.svg#icon_profile" />
+                </svg>
+                Profile
             </a>
         </div> <br>
         `;

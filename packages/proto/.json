@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Character 1",
+        "link": "./writing.html"
+    }, 
+    {
+        "name": "Character 2",
+        "link": "./writing.html"
+    }, 
+    {
+        "name": "Character 3",
+        "link": "./writing.html"
+    }
+]
