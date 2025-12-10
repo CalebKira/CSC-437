@@ -59,7 +59,7 @@ export class WritingCard extends LitElement {
         
         function renderWriting(d: Writing){
             const link = "./writing.html";
-            /* edit this to be the ACTUAL link to the writing later */
+            /* EDIT THIS TO BE THE ACTUAL LINK LATER */
 
             return html`
                 <a href=${link}>${d.storyid}</a>
