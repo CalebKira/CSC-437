@@ -17,16 +17,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
         
         <script type="module">
-            import { define } from "@calpoly/mustang";
+            import { define, Auth } from "@calpoly/mustang";
             import { NavBar } from "/src/nav-bar.ts";
+            import { LoginFormElement } from "/src/auth/login-form";
 
             define({
-                "nav-bar": NavBar
+                "nav-bar": NavBar,
+                "mu-auth": Auth.Provider,
+                "login-form": LoginFormElement
             });
         </script>
     </head>
     
-    <body>
+    <body class="page">
         <!-- Navigation Bar -->
         <nav-bar></nav-bar>
         
@@ -35,26 +38,33 @@
 
 
         <div class="grid">
-            <h3>
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_profile" />
-                </svg>
-                Login:
-                <div class="divider"></div>
-            </h3>
+            <mu-auth class="grid">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_profile" />
+                    </svg>
+                    Login:
+                    <div class="divider"></div>
+                </h3>
+                <main class="card">
+                    <login-form api="/auth/login">
+                        <h4>User Name:
+                            <input name="username" autocomplete="off"></input>
+                        </h4> 
+                        <h4>Password:
+                            <input type="password" name="password"></input>
+                        </h4>
+                    </login-form>
+                </main>
+            </mu-auth>
 
-            <h4>User Name:
-                <input placeholder="creator123"></input>
+            <br>
+            <h4>Or did you want to
+                <a href="newuser.html">Sign up as a new user</a>?
             </h4>
-
-            <h4>Password:
-                <input placeholder="asdfmovies1234"></input>
-            </h4>
-
-
-            <button>Sign In</button>
         </div><br>
 
+        <br><br><br>
         <label id="dark">
             <input type="checkbox" autocomplete="off" id="darkmode" />
             Light Mode

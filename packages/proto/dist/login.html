@@ -16,11 +16,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
         
-      <script type="module" crossorigin src="/assets/login-Ba7fjprW.js"></script>
-      <link rel="modulepreload" crossorigin href="/assets/nav-bar-DSuI490Z.js">
+      <script type="module" crossorigin src="/assets/login-B3g6ywp2.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/nav-bar-t5fDndNx.js">
+      <link rel="modulepreload" crossorigin href="/assets/state-UR3Q4FwZ.js">
     </head>
     
-    <body>
+    <body class="page">
         <!-- Navigation Bar -->
         <nav-bar></nav-bar>
         
@@ -29,26 +30,33 @@
 
 
         <div class="grid">
-            <h3>
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_profile" />
-                </svg>
-                Login:
-                <div class="divider"></div>
-            </h3>
+            <mu-auth class="grid">
+                <h3>
+                    <svg class="icon">
+                        <use href="./icons/page_icons.svg#icon_profile" />
+                    </svg>
+                    Login:
+                    <div class="divider"></div>
+                </h3>
+                <main class="card">
+                    <login-form api="/auth/login">
+                        <h4>User Name:
+                            <input name="username" autocomplete="off"></input>
+                        </h4> 
+                        <h4>Password:
+                            <input type="password" name="password"></input>
+                        </h4>
+                    </login-form>
+                </main>
+            </mu-auth>
 
-            <h4>User Name:
-                <input placeholder="creator123"></input>
+            <br>
+            <h4>Or did you want to
+                <a href="newuser.html">Sign up as a new user</a>?
             </h4>
-
-            <h4>Password:
-                <input placeholder="asdfmovies1234"></input>
-            </h4>
-
-
-            <button>Sign In</button>
         </div><br>
 
+        <br><br><br>
         <label id="dark">
             <input type="checkbox" autocomplete="off" id="darkmode" />
             Light Mode
