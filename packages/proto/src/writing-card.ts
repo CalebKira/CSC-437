@@ -21,13 +21,15 @@ export class WritingCard extends LitElement {
 
     hydrate(src: string, type: string) {   
         const id = "Caleb Kira";
+        /* CHANGE THIS TO BE THE RIGHT USER LATER */
+
         const url = "http://localhost:3000/api/stories/categories/" + type;
         const userURL = url + "/" + id;
 
         if (src == "personal"){
             fetch(userURL)
             .then(res => {
-                // console.log(res.status);
+                console.log(res.status);
                 return res.json();
             })
             .then((json: Writing[]) => {
@@ -39,7 +41,7 @@ export class WritingCard extends LitElement {
         else{
             fetch(url)
             .then(res => {
-                // console.log(res.status);
+                console.log(res.status);
                 return res.json();
             })
             .then((json: Writing[]) => {
@@ -67,7 +69,7 @@ export class WritingCard extends LitElement {
         if (!this.writings){this.writings = []};
 
         return html`
-        <div class="${this.type}">
+        <div class="stuff">
             <h3>
                 <svg class="icon">
                     <use href="./icons/page_icons.svg#${this.icon}" />
@@ -106,11 +108,11 @@ export class WritingCard extends LitElement {
             fill: currentColor;
         }
     
-        .characters, .settings, .plots, .worlds {
-            border: 1px solid var(--color-light-text);
-        }
+        // .stuff {
+        //     border: 1px solid var(--color-light-text);
+        // }
 
-        .characters ul, .settings ul, .plots ul, .worlds ul{
+        .stuff ul{
             place-items: center;
             list-style-type: none;
             padding-left: 0;

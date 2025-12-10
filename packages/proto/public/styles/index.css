@@ -14,11 +14,11 @@
     border: 1px solid var(--color-light-text);
 }
 
-.characters ul, .settings ul, .plots ul, .worlds ul{
+/* .characters ul, .settings ul, .plots ul, .worlds ul{
     place-items: center;
     list-style-type: none;
     padding-left: 0;
-}
+} */
 
 .characters {
     grid-area: characters;

@@ -15,11 +15,11 @@
     grid-column: span 1;
 }
 
-.characters ul, .settings ul, .plots ul, .worlds ul{
+/* .characters ul, .settings ul, .plots ul, .worlds ul{
     place-items: center;
     list-style-type: none;
     padding-left: 0;
-}
+} */
 
 
 @media screen and (max-width: 75rem) {
