@@ -25,13 +25,15 @@ var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
 var import_story_svc = __toESM(require("./services/story-svc"));
 var import_stories = __toESM(require("./routes/stories"));
+var import_auth = __toESM(require("./routes/auth"));
 (0, import_mongo.connect)("worlds");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
-app.use("/api/stories", import_stories.default);
+app.use("/api/stories", import_auth.authenticateUser, import_stories.default);
+app.use("/auth", import_auth.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });

@@ -3,6 +3,8 @@ import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import Story from "./services/story-svc";
 import stories from "./routes/stories";
+import auth, { authenticateUser } from "./routes/auth";
+
 
 connect("worlds"); // use your own db name here
 
@@ -11,9 +13,13 @@ const port = process.env.PORT || 3000;
 const staticDir = process.env.STATIC || "public";
 
 app.use(express.static(staticDir));
+
 app.use(express.json());
 /* middle ware to not parse json on both sides */
-app.use("/api/stories", stories);
+
+app.use("/api/stories", authenticateUser, stories);
+app.use("/auth", auth);
+/* defining api routes grouped together */
 
 
 app.get("/hello", (req: Request, res: Response) => {
