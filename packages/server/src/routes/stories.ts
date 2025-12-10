@@ -19,9 +19,28 @@ router.get("/:storyid", (req: Request, res: Response) => {
     const { storyid } = req.params;
 
     Stories.get(storyid)
-        .then((traveler: Story) => res.json(traveler))
+        .then((story: Story) => res.json(story))
         .catch((err) => res.status(404).send(err));
 });
+
+router.get("/categories/:category", (req: Request, res: Response) => {
+    const { category } = req.params;
+    
+    Stories.getCategory(category)
+        .then((list: Story[]) => res.json(list))
+        .catch((err) => res.status(500).send(err));
+});
+/* finding the specific category data */
+
+router.get("/categories/:category/:userid", (req: Request, res: Response) => {
+    const category = req.params.category;
+    const userid = req.params.userid;
+    
+    Stories.getUser(category, userid)
+        .then((list: Story[]) => res.json(list))
+        .catch((err) => res.status(500).send(err));
+});
+/* finding the specific category data */
 
 
 /* POST APIS */

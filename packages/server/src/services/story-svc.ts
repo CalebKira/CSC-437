@@ -28,6 +28,22 @@ function get(storyid: String): Promise<Story> {
     });
 }
 
+function getCategory(category: String): Promise<Story[]> {
+    return StoryModel.find({ category })
+        .catch((err) => {
+        throw `${category} Not Found`;
+    });
+}
+/* for getting the category specific stories */
+
+function getUser(category: String, userid: String): Promise<Story[]> {
+    return StoryModel.find({ category, userid })
+        .catch((err) => {
+        throw `${category} and ${userid} Not Found`;
+    });
+}
+/* for getting the user specific stories organized */
+
 function create(json: Story): Promise<Story> {
     const t = new StoryModel(json);
     return t.save();
@@ -56,4 +72,4 @@ function remove(storyid: String): Promise<void> {
 /* make a getter function to get the specific story (anyone can access it).
     also limit the interaction between the model and outside world */
 
-export default { get, index, create, update, remove };
+export default { get, getCategory, getUser, index, create, update, remove };

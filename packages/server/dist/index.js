@@ -32,7 +32,7 @@ const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
-app.use("/api/stories", import_auth.authenticateUser, import_stories.default);
+app.use("/api/stories", import_stories.default);
 app.use("/auth", import_auth.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");

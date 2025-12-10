@@ -4,7 +4,7 @@ import reset from "./styles/reset.css.ts";
 
 
 export class WritingCard extends LitElement {
-    @property({ type: String }) type?: string;
+    @property({ type: String }) type: string = '';
     @property({ type: String }) icon = "icon_logo";
     @property({ type: String}) title = "Writing Card";
     /* defining the properties I want as attributes in custom element */
@@ -16,20 +16,38 @@ export class WritingCard extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        if (this.src) this.hydrate(this.src);
+        if (this.src) this.hydrate(this.src, this.type);
     }
 
-    hydrate(src: string) {   
-        fetch(src)
-        .then(res => {
-            // console.log(res.status);
-            return res.json();
-        })
-        .then((json: Writing[]) => {
-            if(json) {
-                this.writings = json;
-            }
-        })
+    hydrate(src: string, type: string) {   
+        const id = "Caleb Kira";
+        const url = "http://localhost:3000/api/stories/categories/" + type;
+        const userURL = url + "/" + id;
+
+        if (src == "personal"){
+            fetch(userURL)
+            .then(res => {
+                // console.log(res.status);
+                return res.json();
+            })
+            .then((json: Writing[]) => {
+                if(json) {
+                    this.writings = json;
+                }
+            })
+        }
+        else{
+            fetch(url)
+            .then(res => {
+                // console.log(res.status);
+                return res.json();
+            })
+            .then((json: Writing[]) => {
+                if(json) {
+                    this.writings = json;
+                }
+            })
+        }
         /* gives the data I need so set the state to json list */
     }
 
@@ -38,8 +56,11 @@ export class WritingCard extends LitElement {
     override render() {
         
         function renderWriting(d: Writing){
+            const link = "./writing.html";
+            /* edit this to be the ACTUAL link to the writing later */
+
             return html`
-                <a href=${d.link}>${d.name}</a>
+                <a href=${link}>${d.storyid}</a>
             `
         }
 
@@ -100,7 +121,9 @@ export class WritingCard extends LitElement {
 
 
 interface Writing {
-    name: string;
-    link: string;
+    storyid: string;
+    userid: string;
+    category: string;
+    content: string;
 }
 /* keep the interface outside for reference */

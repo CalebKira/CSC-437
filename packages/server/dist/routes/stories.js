@@ -39,7 +39,16 @@ router.get("/", (_, res) => {
 });
 router.get("/:storyid", (req, res) => {
   const { storyid } = req.params;
-  import_story_svc.default.get(storyid).then((traveler) => res.json(traveler)).catch((err) => res.status(404).send(err));
+  import_story_svc.default.get(storyid).then((story) => res.json(story)).catch((err) => res.status(404).send(err));
+});
+router.get("/categories/:category", (req, res) => {
+  const { category } = req.params;
+  import_story_svc.default.getCategory(category).then((list) => res.json(list)).catch((err) => res.status(500).send(err));
+});
+router.get("/categories/:category/:userid", (req, res) => {
+  const category = req.params.category;
+  const userid = req.params.userid;
+  import_story_svc.default.getUser(category, userid).then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
 router.post("/", (req, res) => {
   const newStory = req.body;

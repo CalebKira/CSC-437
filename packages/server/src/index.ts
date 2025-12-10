@@ -17,7 +17,8 @@ app.use(express.static(staticDir));
 app.use(express.json());
 /* middle ware to not parse json on both sides */
 
-app.use("/api/stories", authenticateUser, stories);
+app.use("/api/stories", stories);
+// app.use("/api/stories", authenticateUser, stories);
 app.use("/auth", auth);
 /* defining api routes grouped together */
 

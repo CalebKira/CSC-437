@@ -42,6 +42,16 @@ function get(storyid) {
     throw `${storyid} Not Found`;
   });
 }
+function getCategory(category) {
+  return StoryModel.find({ category }).catch((err) => {
+    throw `${category} Not Found`;
+  });
+}
+function getUser(category, userid) {
+  return StoryModel.find({ category, userid }).catch((err) => {
+    throw `${category} and ${userid} Not Found`;
+  });
+}
 function create(json) {
   const t = new StoryModel(json);
   return t.save();
@@ -61,4 +71,4 @@ function remove(storyid) {
     }
   );
 }
-var story_svc_default = { get, index, create, update, remove };
+var story_svc_default = { get, getCategory, getUser, index, create, update, remove };

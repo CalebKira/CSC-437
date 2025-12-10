@@ -8,4 +8,6 @@ export interface Story {
     category: string;
     content: string;
     /* make content into a schema to hold the kind of category story */
+
+    /* MAKE A PUBLIC BOOLEAN LATER */
 }
