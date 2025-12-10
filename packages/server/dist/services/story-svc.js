@@ -27,7 +27,6 @@ const StorySchema = new import_mongoose.Schema(
     storyid: { type: String, required: true, trim: true },
     userid: { type: String, required: true, trim: true },
     category: { type: String, required: true, trim: true },
-    name: { type: String, required: true, trim: true },
     content: { type: String }
   }
 );
@@ -35,9 +34,31 @@ const StoryModel = (0, import_mongoose.model)(
   "Tale",
   StorySchema
 );
+function index() {
+  return StoryModel.find();
+}
 function get(storyid) {
   return StoryModel.find({ storyid }).then((list) => list[0]).catch((err) => {
     throw `${storyid} Not Found`;
   });
 }
-var story_svc_default = { get };
+function create(json) {
+  const t = new StoryModel(json);
+  return t.save();
+}
+function update(storyid, story) {
+  return StoryModel.findOneAndUpdate({ storyid }, story, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${storyid} not updated`;
+    else return updated;
+  });
+}
+function remove(storyid) {
+  return StoryModel.findOneAndDelete({ storyid }).then(
+    (deleted) => {
+      if (!deleted) throw `${storyid} not deleted`;
+    }
+  );
+}
+var story_svc_default = { get, index, create, update, remove };

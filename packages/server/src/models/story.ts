@@ -6,7 +6,6 @@ export interface Story {
     userid: string;
     /* owner id */
     category: string;
-    name: string;
     content: string;
     /* make content into a schema to hold the kind of category story */
 }

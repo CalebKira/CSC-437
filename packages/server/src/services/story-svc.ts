@@ -6,7 +6,6 @@ const StorySchema = new Schema<Story>(
     storyid: { type: String, required: true, trim: true },
     userid: { type: String, required: true, trim: true },
     category: { type: String, required: true, trim: true },
-    name: { type: String, required: true, trim: true },
     content: { type: String }
   }
 );
@@ -16,6 +15,11 @@ const StoryModel = model<Story>(
     StorySchema
 );
 
+
+function index(): Promise<Story[]> {
+    return StoryModel.find();
+}
+
 function get(storyid: String): Promise<Story> {
     return StoryModel.find({ storyid })
         .then((list) => list[0])
@@ -23,7 +27,33 @@ function get(storyid: String): Promise<Story> {
         throw `${storyid} Not Found`;
     });
 }
+
+function create(json: Story): Promise<Story> {
+    const t = new StoryModel(json);
+    return t.save();
+}
+
+function update(
+    storyid: String,
+    story: Story
+): Promise<Story> {
+    return StoryModel.findOneAndUpdate({ storyid }, story, {
+        new: true
+    }).then((updated) => {
+        if (!updated) throw `${storyid} not updated`;
+        else return updated as Story;
+    });
+}
+
+function remove(storyid: String): Promise<void> {
+    return StoryModel.findOneAndDelete({ storyid }).then(
+        (deleted) => {
+        if (!deleted) throw `${storyid} not deleted`;
+        }
+    );
+}
+
 /* make a getter function to get the specific story (anyone can access it).
     also limit the interaction between the model and outside world */
 
-export default { get };
+export default { get, index, create, update, remove };
