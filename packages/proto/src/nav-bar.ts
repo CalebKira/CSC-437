@@ -1,8 +1,54 @@
 import { html, css, LitElement } from "lit";
+import { state } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
+import { Auth, Observer, Events } from "@calpoly/mustang";
 
 export class NavBar extends LitElement {
 /* don't need a cconstructor */
+    _authObserver = new Observer<Auth.Model>(this, "world:auth");
+
+    @state()
+    loggedIn = false;
+
+    @state()
+    userid?: string;
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this._authObserver.observe((auth: Auth.Model) => {
+        const { user } = auth;
+
+        if (user && user.authenticated ) {
+            this.loggedIn = true;
+            this.userid = user.username;
+        } else {
+            this.loggedIn = false;
+            this.userid = undefined;
+        }
+        });
+    }
+
+    renderSignOutButton() {
+        return html`
+            <button
+            @click=${(e: UIEvent) => {
+                Events.relay(e, "auth:message", ["auth/signout"])
+            }}
+            >
+            Sign Out
+            </button>
+        `;
+    }
+
+    renderSignInButton() {
+        return html`
+            <a href="/login.html">
+            Sign In…
+            </a>
+        `;
+    }
+
     override render() {
         /* FUTURE: add a reference to the home page here */
         return html`
@@ -13,7 +59,7 @@ export class NavBar extends LitElement {
                 </svg>
                 World Builder
             </a>
-            
+
             <a href="./categories.html">
                 <svg class="icon">
                     <use href="./icons/page_icons.svg#icon_search" />
@@ -28,12 +74,17 @@ export class NavBar extends LitElement {
                 Personal
             </a>
 
-            <a href="./login.html">
+
+            <a slot="actuator">
                 <svg class="icon">
                     <use href="./icons/page_icons.svg#icon_profile" />
                 </svg>
-                Profile
+                Hello, ${this.userid || "traveler"}
             </a>
+            ${this.loggedIn ?
+                this.renderSignOutButton() :
+                this.renderSignInButton()
+            }
         </div> <br>
         `;
     }
@@ -43,6 +94,14 @@ export class NavBar extends LitElement {
         a {
             color: var(--color-link);
             text-decoration: none;
+        }
+        
+        button {
+            color: var(--color-link);
+            background-color: var(--color-background);
+            font-family: var(--font-header-family);
+            width: 80px;
+            height: 40px;
         }
 
         svg.icon {

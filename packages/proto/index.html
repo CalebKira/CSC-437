@@ -18,116 +18,123 @@
     
         
         <script type="module">
-            import { define } from "@calpoly/mustang";
+            import { define, Auth } from "@calpoly/mustang";
             import { WritingCard } from "/src/writing-card.ts";
             import { NavBar } from "/src/nav-bar.ts";
+            import { LoginFormElement } from "/src/auth/login-form";
 
             define({
                 "writing-card": WritingCard,
-                "nav-bar": NavBar
+                "nav-bar": NavBar,
+                "mu-auth": Auth.Provider,
+                "login-form": LoginFormElement
             });
         </script>
     </head>
     
     <body>
+        <mu-auth provides="world:auth">
+            <nav-bar></nav-bar>
 
-        <!-- Navigation Bar -->
-        <!-- <div class="header">
-            <a id="logo" href="">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_logo" />
-                </svg>
-                World Builder
-            </a>
+            <main class="page">
+                <!-- Navigation Bar -->
+                <!-- <div class="header">
+                    <a id="logo" href="">
+                        <svg class="icon">
+                            <use href="./icons/page_icons.svg#icon_logo" />
+                        </svg>
+                        World Builder
+                    </a>
 
-            <label>
-                <input type="checkbox" autocomplete="off" id="darkmode" />
-                Light Mode
-            </label>
-            
-            <a href="./categories.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_search" />
-                </svg>
-                Search
-            </a>
+                    <label>
+                        <input type="checkbox" autocomplete="off" id="darkmode" />
+                        Light Mode
+                    </label>
+                    
+                    <a href="./categories.html">
+                        <svg class="icon">
+                            <use href="./icons/page_icons.svg#icon_search" />
+                        </svg>
+                        Search
+                    </a>
 
-            <a href="./index.html">
-                <svg class="icon">
-                    <use href="./icons/page_icons.svg#icon_profile" />
-                </svg>
-                Personal
-            </a>
-        </div> <br> -->
-        <nav-bar></nav-bar>
+                    <a href="./index.html">
+                        <svg class="icon">
+                            <use href="./icons/page_icons.svg#icon_profile" />
+                        </svg>
+                        Personal
+                    </a>
+                </div> <br> -->
 
-        <h2 class="page-title">My Writing</h2>
+                <h2 class="page-title">My Writing</h2>
 
-        <!-- Be in grid form -->
-        <div class="grid">
+                <!-- Be in grid form -->
+                <div class="grid">
 
-            <!-- Side Bar -->
-            <div class="sidebar">
-                <a href="./post.html">
-                    <svg class="icon">
-                        <use href="./icons/page_icons.svg#icon_post" />
-                    </svg>
-                    Post
-                </a><br>
+                    <!-- Side Bar -->
+                    <div class="sidebar">
+                        <a href="./post.html">
+                            <svg class="icon">
+                                <use href="./icons/page_icons.svg#icon_post" />
+                            </svg>
+                            Post
+                        </a><br>
 
-                <a href="./share.html">
-                    <svg class="icon">
-                        <use href="./icons/page_icons.svg#icon_share" />
-                    </svg>
-                    Share
-                </a><br>
+                        <a href="./share.html">
+                            <svg class="icon">
+                                <use href="./icons/page_icons.svg#icon_share" />
+                            </svg>
+                            Share
+                        </a><br>
 
-                <a href="./writing.html">
-                    <svg class="icon">
-                        <use href="./icons/page_icons.svg#icon_personal" />
-                    </svg>
-                    Create
-                </a>
-            </div>
+                        <a href="./writing.html">
+                            <svg class="icon">
+                                <use href="./icons/page_icons.svg#icon_personal" />
+                            </svg>
+                            Create
+                        </a>
+                    </div>
 
-            <!-- All the rest of the cards -->
-            <!-- <div class="characters">
-                <h3>
-                    <svg class="icon">
-                        <use href="./icons/page_icons.svg#icon_character" />
-                    </svg>
-                    Characters
-                </h3>
-                <ul>
-                    <li><a href="./writing.html">Character 1</a></li>
-                    <li><a href="./writing.html">Character 2</a></li>
-                    <li><a href="./writing.html">Character 3</a></li>
-                </ul>
-            </div> -->
+                    <!-- All the rest of the cards -->
+                    <!-- <div class="characters">
+                        <h3>
+                            <svg class="icon">
+                                <use href="./icons/page_icons.svg#icon_character" />
+                            </svg>
+                            Characters
+                        </h3>
+                        <ul>
+                            <li><a href="./writing.html">Character 1</a></li>
+                            <li><a href="./writing.html">Character 2</a></li>
+                            <li><a href="./writing.html">Character 3</a></li>
+                        </ul>
+                    </div> -->
 
-            <writing-card icon="icon_character" title="Characters" type="character" class="characters" src="personal">
-                <!-- defining type for the internal css and class for grid external stuff -->
-                <!-- <li><a href="./writing.html">Character 1</a></li>
-                <li><a href="./writing.html">Character 2</a></li>
-                <li><a href="./writing.html">Character 3</a></li> -->
-            </writing-card>
+                    <writing-card icon="icon_character" title="Characters" type="character" class="characters" src="personal">
+                        <!-- defining type for the internal css and class for grid external stuff -->
+                        <!-- <li><a href="./writing.html">Character 1</a></li>
+                        <li><a href="./writing.html">Character 2</a></li>
+                        <li><a href="./writing.html">Character 3</a></li> -->
+                    </writing-card>
 
-            <writing-card icon="icon_setting" title="Settings" type="setting" class="settings" src="personal">
-            </writing-card>
+                    <writing-card icon="icon_setting" title="Settings" type="setting" class="settings" src="personal">
+                    </writing-card>
 
-            <writing-card icon="icon_plot" title="Plots" type="plot" class="plots" src="personal">
-            </writing-card>
+                    <writing-card icon="icon_plot" title="Plots" type="plot" class="plots" src="personal">
+                    </writing-card>
 
-            <writing-card icon="icon_worldbuild" title="Worlds" type="world" class="worlds" src="personal">
-            </writing-card>
-            <!-- make this so t doesn't have the title in the attributes -->
+                    <writing-card icon="icon_worldbuild" title="Worlds" type="world" class="worlds" src="personal">
+                    </writing-card>
+                    <!-- make this so t doesn't have the title in the attributes -->
 
-        </div><br>
+                </div><br>
 
-        <label id="dark">
-            <input type="checkbox" autocomplete="off" id="darkmode" />
-            Light Mode
-        </label>
+                <label id="dark">
+                    <input type="checkbox" autocomplete="off" id="darkmode" />
+                    Light Mode
+                </label>
+            </main>
+        </mu-auth>
     </body>
 </html>
 
