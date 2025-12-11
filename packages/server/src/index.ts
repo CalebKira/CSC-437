@@ -4,6 +4,7 @@ import { connect } from "./services/mongo";
 import Story from "./services/story-svc";
 import stories from "./routes/stories";
 import auth, { authenticateUser } from "./routes/auth";
+import search from "./routes/search"
 
 
 connect("worlds"); // use your own db name here
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use("/api/stories", authenticateUser, stories);
 app.use("/auth", auth);
+app.use("/search", search);
 /* defining api routes grouped together */
 
 

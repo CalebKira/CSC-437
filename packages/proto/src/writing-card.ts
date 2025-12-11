@@ -34,26 +34,53 @@ export class WritingCard extends LitElement {
                 this.hydrate(this.src, this._user.username)
             };
         });
+
+        if (this.src) this.hydrate(this.src, "");
+        /* if there is no seen user, just run hydrate */
     }
 
     hydrate(src: string, user: string) {   
-        const url = "http://localhost:3000/api/stories/categories/" + this.type;
-        const userURL = url + "/" + user;
+        if (user != ""){
+            /* initial check to see if there is a user */
 
-        if (this.authorization != false){
-            if (src == "personal"){
-                fetch(userURL, { headers: this.authorization } )
-                .then(res => {
-                    // console.log(res.status);
-                    return res.json();
-                })
-                .then((json: Writing[]) => {
-                    if(json) {
-                        this.writings = json;
-                    }
-                })
+            if (this.authorization != false){
+                /* test to see if the user is authorized */
+                const userURL = "http://localhost:3000/api/stories/categories/" + this.type + "/" + user;
+
+                if (src == "personal"){
+                    /* double checks what kind of page it is */
+                    fetch(userURL, { headers: this.authorization } )
+                    .then(res => {
+                        // console.log(res.status);
+                        return res.json();
+                    })
+                    .then((json: Writing[]) => {
+                        if(json) {
+                            this.writings = json;
+                        }
+                    })
+                }
+                else{
+                    const url = "http://localhost:3000/search/categories/" + this.type;
+                    
+                    fetch(url)
+                    .then(res => {
+                        // console.log(res.status);
+                        return res.json();
+                    })
+                    .then((json: Writing[]) => {
+                        if(json) {
+                            this.writings = json;
+                        }
+                    })
+                }
             }
-            else{
+            /* gives the data I need so set the state to json list */
+        }
+        else{
+            if (src != "personal"){
+                const url = "http://localhost:3000/search/categories/" + this.type;
+                
                 fetch(url)
                 .then(res => {
                     // console.log(res.status);
@@ -65,8 +92,9 @@ export class WritingCard extends LitElement {
                     }
                 })
             }
+            /* basically just checks to make sure its not on a personal page
+                to just get everything from a given category */
         }
-        /* gives the data I need so set the state to json list */
     }
 
 

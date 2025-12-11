@@ -5,6 +5,10 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
@@ -21,31 +25,24 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var search_exports = {};
+__export(search_exports, {
+  default: () => search_default
+});
+module.exports = __toCommonJS(search_exports);
 var import_express = __toESM(require("express"));
-var import_mongo = require("./services/mongo");
-var import_story_svc = __toESM(require("./services/story-svc"));
-var import_stories = __toESM(require("./routes/stories"));
-var import_auth = __toESM(require("./routes/auth"));
-var import_search = __toESM(require("./routes/search"));
-(0, import_mongo.connect)("worlds");
-const app = (0, import_express.default)();
-const port = process.env.PORT || 3e3;
-const staticDir = process.env.STATIC || "public";
-app.use(import_express.default.static(staticDir));
-app.use(import_express.default.json());
-app.use("/api/stories", import_auth.authenticateUser, import_stories.default);
-app.use("/auth", import_auth.default);
-app.use("/search", import_search.default);
-app.get("/hello", (req, res) => {
-  res.send("Hello, World");
+var import_story_svc = __toESM(require("../services/story-svc"));
+const router = import_express.default.Router();
+router.get("/", (_, res) => {
+  import_story_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
-app.get("/story/:storyid", (req, res) => {
+router.get("/categories/:category", (req, res) => {
+  const { category } = req.params;
+  import_story_svc.default.getCategory(category).then((list) => res.json(list)).catch((err) => res.status(500).send(err));
+});
+router.get("/:storyid", (req, res) => {
   const { storyid } = req.params;
-  import_story_svc.default.get(storyid).then((data) => {
-    if (data) res.set("Content-Type", "application/json").send(JSON.stringify(data));
-    else res.status(404).send();
-  });
+  import_story_svc.default.get(storyid).then((story) => res.json(story)).catch((err) => res.status(404).send(err));
 });
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+var search_default = router;

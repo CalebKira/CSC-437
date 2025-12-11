@@ -17,38 +17,41 @@
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
         
 
-      <script type="module" crossorigin src="/assets/categories-CMPeLlFo.js"></script>
+      <script type="module" crossorigin src="/assets/categories-BotNywix.js"></script>
       <link rel="modulepreload" crossorigin href="/assets/nav-bar-BxM_Gnch.js">
-      <link rel="modulepreload" crossorigin href="/assets/writing-card-d2GOKopR.js">
+      <link rel="modulepreload" crossorigin href="/assets/writing-card-A7UwOHm-.js">
     </head>
     
     <body>
-        <!-- Navigation Bar -->
-        <nav-bar></nav-bar>
+        <mu-auth provides="world:auth">
+            <main class="page">
+                <!-- Navigation Bar -->
+                <nav-bar></nav-bar>
 
-        <h2>Public Writing</h2>
+                <h2>Public Writing</h2>
 
-        <div class="grid">
+                <div class="grid">
 
-            <writing-card icon="icon_character" title="Popular Characters" type="character" class="characters" src="./data/characters.json">
-            </writing-card>
+                    <writing-card icon="icon_character" title="Popular Characters" type="character" class="characters" src="./data/characters.json">
+                    </writing-card>
 
-            <writing-card icon="icon_setting" title="Popular Settings" type="setting" class="settings" src="./data/settings.json">
-            </writing-card>
+                    <writing-card icon="icon_setting" title="Popular Settings" type="setting" class="settings" src="./data/settings.json">
+                    </writing-card>
 
-            <writing-card icon="icon_plot" title="Popular Plots" type="plot" class="plots" src="./data/plots.json">
-            </writing-card>
+                    <writing-card icon="icon_plot" title="Popular Plots" type="plot" class="plots" src="./data/plots.json">
+                    </writing-card>
 
-            <writing-card icon="icon_worldbuild" title="Popular Worlds" type="world" class="worlds" src="./data/worlds.json">
-            </writing-card>
+                    <writing-card icon="icon_worldbuild" title="Popular Worlds" type="world" class="worlds" src="./data/worlds.json">
+                    </writing-card>
 
-        </div><br>
+                </div><br>
 
-        <label id="dark">
-            <input type="checkbox" autocomplete="off" id="darkmode" />
-            Light Mode
-        </label>
-
+                <label id="dark">
+                    <input type="checkbox" autocomplete="off" id="darkmode" />
+                    Light Mode
+                </label>
+            </main>
+        </mu-auth>
 
     </body>
 </html>

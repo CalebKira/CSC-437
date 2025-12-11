@@ -34,17 +34,6 @@ module.exports = __toCommonJS(stories_exports);
 var import_express = __toESM(require("express"));
 var import_story_svc = __toESM(require("../services/story-svc"));
 const router = import_express.default.Router();
-router.get("/", (_, res) => {
-  import_story_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
-});
-router.get("/:storyid", (req, res) => {
-  const { storyid } = req.params;
-  import_story_svc.default.get(storyid).then((story) => res.json(story)).catch((err) => res.status(404).send(err));
-});
-router.get("/categories/:category", (req, res) => {
-  const { category } = req.params;
-  import_story_svc.default.getCategory(category).then((list) => res.json(list)).catch((err) => res.status(500).send(err));
-});
 router.get("/categories/:category/:userid", (req, res) => {
   const category = req.params.category;
   const userid = req.params.userid;
