@@ -27,6 +27,7 @@ var import_story_svc = __toESM(require("./services/story-svc"));
 var import_stories = __toESM(require("./routes/stories"));
 var import_auth = __toESM(require("./routes/auth"));
 var import_search = __toESM(require("./routes/search"));
+var import_profiles = __toESM(require("./routes/profiles"));
 var import_promises = __toESM(require("node:fs/promises"));
 var import_path = __toESM(require("path"));
 (0, import_mongo.connect)("worlds");
@@ -38,6 +39,7 @@ app.use(import_express.default.json());
 app.use("/api/stories", import_auth.authenticateUser, import_stories.default);
 app.use("/auth", import_auth.default);
 app.use("/search", import_search.default);
+app.use("/profile", import_profiles.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });

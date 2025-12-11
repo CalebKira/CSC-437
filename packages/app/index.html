@@ -19,10 +19,12 @@
     <body>
         <mu-history provides="world:history">
             <mu-auth provides="world:auth">
-                <main class="page">
-                    <nav-bar></nav-bar>
-                </main>
-                <mu-switch></mu-switch>
+                <mu-store provides="world:model">
+                    <main class="page">
+                        <nav-bar></nav-bar>
+                    </main>
+                    <mu-switch></mu-switch>
+                </mu-store>
             </mu-auth>
         </mu-history>
     </body>

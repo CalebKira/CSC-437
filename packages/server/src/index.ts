@@ -5,6 +5,7 @@ import Story from "./services/story-svc";
 import stories from "./routes/stories";
 import auth, { authenticateUser } from "./routes/auth";
 import search from "./routes/search";
+import profiles from "./routes/profiles";
 import fs from "node:fs/promises";
 import path from "path";
 
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use("/api/stories", authenticateUser, stories);
 app.use("/auth", auth);
 app.use("/search", search);
+app.use("/profile", profiles);
 /* defining api routes grouped together */
 
 
