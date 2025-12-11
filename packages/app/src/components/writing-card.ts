@@ -45,7 +45,8 @@ export class WritingCard extends LitElement {
 
             if (this.authorization != false){
                 /* test to see if the user is authorized */
-                const userURL = "http://localhost:3000/api/stories/categories/" + this.type + "/" + user;
+                const userURL = "/api/stories/categories/" + this.type + "/" + user;
+                /* LINKS ARE NOW CHANGED VIA PROXY IN VITE.CONFIG */
 
                 if (src == "personal"){
                     /* double checks what kind of page it is */
@@ -61,7 +62,7 @@ export class WritingCard extends LitElement {
                     })
                 }
                 else{
-                    const url = "http://localhost:3000/search/categories/" + this.type;
+                    const url = "/search/categories/" + this.type;
                     
                     fetch(url)
                     .then(res => {
@@ -79,7 +80,7 @@ export class WritingCard extends LitElement {
         }
         else{
             if (src != "personal"){
-                const url = "http://localhost:3000/search/categories/" + this.type;
+                const url = "/search/categories/" + this.type;
                 
                 fetch(url)
                 .then(res => {
