@@ -1,9 +1,9 @@
 import { define } from "@calpoly/mustang"
 import { css, html, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
 import { LoginFormElement } from "../auth/login-form";
 import page from "../styles/page.css";
 import reset from "../styles/reset.css";
+import post from "../styles/post.css";
 // import reset from "../styles/reset.css.ts";
 /* only need this for specific custom components */
 
@@ -49,50 +49,8 @@ export class LoginViewElement extends LitElement {
         `;
     }
 
-    static styles = [reset.styles, page.styles, css`
-        /* MAKE SURE THIS IS SPECIFIC TO POST */
+    static styles = [reset.styles, page.styles, post.styles, css`
 
-        h2{
-            text-align: center;
-        }
-
-        h3{
-            width: 100%;
-        }
-
-        h4{
-            width: 100%;
-        }
-
-        button {
-            color: var(--color-dark-text);
-            background-color: var(--color-light-text);
-            font-family: var(--font-body-family);
-        }
-
-        .grid input {
-            background-color: var(--color-background);
-            color: var(--color-light-text-2);
-            width: 100%;
-            font-family: var(--font-body-family);
-        }
-
-        .divider{
-            border: 1px solid var(--color-light-text);
-            width: 100%;
-        }
-
-        /* GRID */
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            padding: var(--padding);
-            gap: var(--flex-spacing);
-            border: 1px solid var(--color-light-text);
-            width: 300px;
-            height: fit-content;
-            margin: auto;
-        }
     `    
     ]
 

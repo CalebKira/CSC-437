@@ -10,6 +10,8 @@ import { HomeViewElement } from "./views/home-view";
 import { PersonalViewElement } from "./views/personal-view";
 import { LoginViewElement } from "./views/login-view";
 import { SearchViewElement } from "./views/search-view";
+import { PostViewElement } from "./views/post-view";
+import { ShareViewElement } from "./views/share-view";
 
 const routes = [
     {
@@ -108,4 +110,6 @@ define({
     "personal-view": PersonalViewElement,
     "login-view": LoginViewElement,
     "search-view": SearchViewElement,
+    "post-view": PostViewElement,
+    "share-view": ShareViewElement,
 })
