@@ -21,22 +21,20 @@
             import { define, Auth } from "@calpoly/mustang";
             import { WritingCard } from "/src/writing-card.ts";
             import { NavBar } from "/src/nav-bar.ts";
-            import { LoginFormElement } from "/src/auth/login-form";
 
             define({
                 "writing-card": WritingCard,
                 "nav-bar": NavBar,
-                "mu-auth": Auth.Provider,
-                "login-form": LoginFormElement
+                "mu-auth": Auth.Provider
             });
         </script>
     </head>
     
     <body>
         <mu-auth provides="world:auth">
-            <nav-bar></nav-bar>
 
             <main class="page">
+                <nav-bar></nav-bar>
                 <!-- Navigation Bar -->
                 <!-- <div class="header">
                     <a id="logo" href="">

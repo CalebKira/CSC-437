@@ -1,6 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
+import { Auth, Observer } from "@calpoly/mustang";
 
 
 export class WritingCard extends LitElement {
@@ -13,42 +14,57 @@ export class WritingCard extends LitElement {
     @state() writings?: Array<Writing> = [];
     /* question mark just in case you render nothing */
 
+    _authObserver = new Observer<Auth.Model>(this, "world:auth");
+    _user?: Auth.User;
+
+    get authorization() {
+        return (
+            this._user?.authenticated && {
+            Authorization:
+                `Bearer ${(this._user as Auth.AuthenticatedUser).token}`
+            }
+        );
+    }
 
     connectedCallback() {
         super.connectedCallback();
-        if (this.src) this.hydrate(this.src, this.type);
+        this._authObserver.observe((auth: Auth.Model) => {
+            this._user= auth.user;
+            if ((this._user != undefined) && (this.src != undefined)) {
+                this.hydrate(this.src, this._user.username)
+            };
+        });
     }
 
-    hydrate(src: string, type: string) {   
-        const id = "Caleb Kira";
-        /* CHANGE THIS TO BE THE RIGHT USER LATER */
+    hydrate(src: string, user: string) {   
+        const url = "http://localhost:3000/api/stories/categories/" + this.type;
+        const userURL = url + "/" + user;
 
-        const url = "http://localhost:3000/api/stories/categories/" + type;
-        const userURL = url + "/" + id;
-
-        if (src == "personal"){
-            fetch(userURL)
-            .then(res => {
-                console.log(res.status);
-                return res.json();
-            })
-            .then((json: Writing[]) => {
-                if(json) {
-                    this.writings = json;
-                }
-            })
-        }
-        else{
-            fetch(url)
-            .then(res => {
-                console.log(res.status);
-                return res.json();
-            })
-            .then((json: Writing[]) => {
-                if(json) {
-                    this.writings = json;
-                }
-            })
+        if (this.authorization != false){
+            if (src == "personal"){
+                fetch(userURL, { headers: this.authorization } )
+                .then(res => {
+                    // console.log(res.status);
+                    return res.json();
+                })
+                .then((json: Writing[]) => {
+                    if(json) {
+                        this.writings = json;
+                    }
+                })
+            }
+            else{
+                fetch(url)
+                .then(res => {
+                    // console.log(res.status);
+                    return res.json();
+                })
+                .then((json: Writing[]) => {
+                    if(json) {
+                        this.writings = json;
+                    }
+                })
+            }
         }
         /* gives the data I need so set the state to json list */
     }

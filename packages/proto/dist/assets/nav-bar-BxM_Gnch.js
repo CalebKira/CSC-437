@@ -143,7 +143,7 @@ Expecting `+ft.join(", ")+", got '"+(this.terminals_[b]||b)+"'":Rt="Parse error 
     img {
         max-width: 100%;
     }
-`,ur={styles:cr};var dr=Object.defineProperty,$s=(r,t,e,s)=>{for(var i=void 0,n=r.length-1,o;n>=0;n--)(o=r[n])&&(i=o(t,e,i)||i);return i&&dr(t,e,i),i};const se=class se extends st{constructor(){super(...arguments),this._authObserver=new rt(this,"world:auth"),this.loggedIn=!1}connectedCallback(){super.connectedCallback(),this._authObserver.observe(t=>{const{user:e}=t;e&&e.authenticated?(this.loggedIn=!0,this.userid=e.username):(this.loggedIn=!1,this.userid=void 0)})}renderSignOutButton(){return Lt`
+`,ur={styles:cr};var dr=Object.defineProperty,$s=(r,t,e,s)=>{for(var i=void 0,n=r.length-1,o;n>=0;n--)(o=r[n])&&(i=o(t,e,i)||i);return i&&dr(t,e,i),i};const se=class se extends st{constructor(){super(...arguments),this._authObserver=new rt(this,"world:auth"),this.loggedIn=!1}connectedCallback(){super.connectedCallback(),this._authObserver.observe(t=>{const{user:e}=t;e&&e.authenticated?(this.loggedIn=!0,this.userid=e.username):(this.loggedIn=!1,this.userid=void 0),console.log(this.userid)})}renderSignOutButton(){return Lt`
             <button
             @click=${t=>{Hs.relay(t,"auth:message",["auth/signout"])}}
             >
@@ -227,4 +227,4 @@ Expecting `+ft.join(", ")+", got '"+(this.terminals_[b]||b)+"'":Rt="Parse error 
             margin-right: auto; 
             font-size: var(--nav-logo-font-size);
         }
-    `];let Et=se;$s([ys()],Et.prototype,"loggedIn");$s([ys()],Et.prototype,"userid");export{Et as N,pr as a,ps as b,ys as c,wr as d,st as i,hr as n,ur as r,Lt as x};
+    `];let Et=se;$s([ys()],Et.prototype,"loggedIn");$s([ys()],Et.prototype,"userid");export{Et as N,rt as O,pr as a,ps as b,ys as c,wr as d,st as i,hr as n,ur as r,Lt as x};

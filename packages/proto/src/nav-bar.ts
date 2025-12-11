@@ -13,9 +13,10 @@ export class NavBar extends LitElement {
     @state()
     userid?: string;
 
+
     connectedCallback() {
         super.connectedCallback();
-
+        
         this._authObserver.observe((auth: Auth.Model) => {
         const { user } = auth;
 
@@ -26,6 +27,10 @@ export class NavBar extends LitElement {
             this.loggedIn = false;
             this.userid = undefined;
         }
+        
+        console.log(this.userid);
+        /* So cool! it changes the state values and checks if there has 
+            ever been a login and reloads the page */
         });
     }
 
@@ -48,6 +53,7 @@ export class NavBar extends LitElement {
             </a>
         `;
     }
+    /* determines between the sign in and signout conditionally in the html below */
 
     override render() {
         /* FUTURE: add a reference to the home page here */

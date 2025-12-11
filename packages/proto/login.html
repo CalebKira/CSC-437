@@ -30,23 +30,22 @@
     </head>
     
     <body class="page">
-        <!-- Navigation Bar -->
-        <nav-bar></nav-bar>
-        
-        <h2>Login</h2>
-        <!-- <a href="./index.html">My Writing</a><br> -->
+        <mu-auth>
+            <main class="card">
+                <!-- Navigation Bar -->
+                <nav-bar></nav-bar>
+                
+                <h2>Login</h2>
+                <!-- <a href="./index.html">My Writing</a><br> -->
 
-
-        <div class="grid">
-            <mu-auth class="grid">
-                <h3>
-                    <svg class="icon">
-                        <use href="./icons/page_icons.svg#icon_profile" />
-                    </svg>
-                    Login:
-                    <div class="divider"></div>
-                </h3>
-                <main class="card">
+                <div class="grid">
+                    <h3>
+                        <svg class="icon">
+                            <use href="./icons/page_icons.svg#icon_profile" />
+                        </svg>
+                        Login:
+                        <div class="divider"></div>
+                    </h3>
                     <login-form api="/auth/login">
                         <h4>User Name:
                             <input name="username" autocomplete="off"></input>
@@ -55,20 +54,21 @@
                             <input type="password" name="password"></input>
                         </h4>
                     </login-form>
-                </main>
-            </mu-auth>
+                    <br>
+                    <h4>Or did you want to
+                        <a href="newuser.html">Sign up as a new user</a>?
+                    </h4>
+                </div>
 
-            <br>
-            <h4>Or did you want to
-                <a href="newuser.html">Sign up as a new user</a>?
-            </h4>
-        </div><br>
+                <br>
 
-        <br><br><br>
-        <label id="dark">
-            <input type="checkbox" autocomplete="off" id="darkmode" />
-            Light Mode
-        </label>
+                <br><br><br>
+                <label id="dark">
+                    <input type="checkbox" autocomplete="off" id="darkmode" />
+                    Light Mode
+                </label>
+            </main>
+        </mu-auth>
 
     </body>
 </html>
