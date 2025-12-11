@@ -1,8 +1,9 @@
 import { define } from "@calpoly/mustang"
 import { css, html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import page from "../styles/page.css";
 import { WritingCard } from "../components/writing-card";
+import page from "../styles/page.css";
+import reset from "../styles/reset.css";
 // import reset from "../styles/reset.css.ts";
 /* only need this for specific custom components */
 
@@ -85,7 +86,7 @@ export class PersonalViewElement extends LitElement {
         `;
     }
 
-    static styles = [page.styles, css`
+    static styles = [reset.styles, page.styles, css`
         /* Index page organization */
 
         /* GRID */

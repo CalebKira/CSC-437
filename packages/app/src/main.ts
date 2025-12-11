@@ -4,10 +4,12 @@ import {
     History,
     Switch
 } from "@calpoly/mustang";
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { NavBar } from "./components/nav-bar";
 import { HomeViewElement } from "./views/home-view";
 import { PersonalViewElement } from "./views/personal-view";
+import { LoginViewElement } from "./views/login-view";
+import { SearchViewElement } from "./views/search-view";
 
 const routes = [
     {
@@ -31,6 +33,19 @@ const routes = [
         `
     }, /* reading some file page */
 
+    {
+        path: "/app/login",
+        view: () => html`
+        <login-view></login-view>
+        `
+    }, /* login page (login.html) */
+
+    {
+        path: "/app/signup",
+        view: () => html`
+        <signup-view></signup-view>
+        `
+    }, /* signup page */
 
     {
         path: "/app/personal",
@@ -91,4 +106,6 @@ define({
     },
     "home-view": HomeViewElement,
     "personal-view": PersonalViewElement,
+    "login-view": LoginViewElement,
+    "search-view": SearchViewElement,
 })

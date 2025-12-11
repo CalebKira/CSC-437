@@ -48,7 +48,7 @@ export class NavBar extends LitElement {
 
     renderSignInButton() {
         return html`
-            <a href="../../login.html">
+            <a href="/app/login">
             Sign In…
             </a>
         `;

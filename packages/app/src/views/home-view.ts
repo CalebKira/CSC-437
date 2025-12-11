@@ -1,5 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import page from "../styles/page.css";
+import reset from "../styles/reset.css";
 // import reset from "../styles/reset.css.ts";
 /* only need this for specific custom components */
 
@@ -24,7 +26,7 @@ export class HomeViewElement extends LitElement {
         `;
     }
 
-    static styles = [css`
+    static styles = [reset.styles, page.styles, css`
         h1{
             background-color: var(--color-h1);
             font-family: var(--font-header-family);
