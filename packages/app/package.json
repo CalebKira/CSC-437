@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "single paged application form of proto",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server dist -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx vite",
+    "build": "npx tsc && npx vite build"
+  },
+  "author": "Caleb Kira",
+  "license": "ISC",
+  "dependencies": {
+    "@calpoly/mustang": "^1.0.18",
+    "lit": "^3.3.1"
+  }
+}

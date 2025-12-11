@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="./styles/reset.css" />
+
+        <link rel="stylesheet" href="./styles/page.css" />
+        <link rel="stylesheet" href="./styles/tokens.css" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">      
+    
+        
+        <script type="module" src="/src/main.ts"></script>
+    </head>
+    
+    <body>
+        <mu-history provides="world:history">
+            <mu-auth provides="world:auth">
+                <main class="page">
+                    <nav-bar></nav-bar>
+                </main>
+                <mu-switch></mu-switch>
+            </mu-auth>
+        </mu-history>
+    </body>
+</html>
+
+

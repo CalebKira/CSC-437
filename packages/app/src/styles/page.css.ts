@@ -1,0 +1,73 @@
+import { css } from "lit";
+
+const styles = css`
+    /* Overall page heirarchy */
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-light-text);
+        font-family: var(--font-body-family);
+        font-weight: var(--font-body-weight);
+    }
+
+
+    h2{
+        background-color: var(--color-h2);
+        font-family: var(--font-header-family);
+        font-weight: 700;
+        padding-left: var(--padding);
+        /* padding because this is always the title */
+    }
+
+    h3 {
+        background-color: var(--color-h3);
+        font-family: var(--font-header-family);
+        font-weight: 500;
+    }
+
+    a {
+        color: var(--color-link);
+        text-decoration: none;
+    }
+
+
+    svg.icon {
+        display: inline;
+        height: 2em;
+        width: 2em;
+        vertical-align: top;
+        color: inherit;
+        fill: currentColor;
+    }
+
+
+    /* NAV BAR */
+    div.header{
+        display: flex;
+        background-color: var(--color-background);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    div.header a{
+        font-family: var(--font-header-family);
+        font-size: var(--nav-other-font-size);
+        margin: var(--nav-spacing);
+    }
+
+    #logo{
+        /* the margin right makes only the logo left */
+        margin-right: auto; 
+        font-size: var(--nav-logo-font-size);
+    }
+
+    #dark {
+        font-family: var(--font-header-family);
+        font-size: var(--nav-other-font-size);
+        color: var(--color-link);
+        padding-left: var(--padding);
+    }
+`;
+
+export default { styles };
