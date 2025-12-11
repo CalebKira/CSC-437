@@ -1,6 +1,7 @@
 import { define } from "@calpoly/mustang"
 import { css, html, LitElement } from "lit";
 import { LoginFormElement } from "../auth/login-form";
+// import { property, state } from "lit/decorators.js";
 import page from "../styles/page.css";
 import reset from "../styles/reset.css";
 import post from "../styles/post.css";

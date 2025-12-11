@@ -1,6 +1,7 @@
 import { define } from "@calpoly/mustang"
 import { css, html, LitElement } from "lit";
 import { WritingCard } from "../components/writing-card";
+// import { property, state } from "lit/decorators.js";
 import page from "../styles/page.css";
 import reset from "../styles/reset.css";
 // import reset from "../styles/reset.css.ts";

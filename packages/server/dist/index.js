@@ -27,6 +27,8 @@ var import_story_svc = __toESM(require("./services/story-svc"));
 var import_stories = __toESM(require("./routes/stories"));
 var import_auth = __toESM(require("./routes/auth"));
 var import_search = __toESM(require("./routes/search"));
+var import_promises = __toESM(require("node:fs/promises"));
+var import_path = __toESM(require("path"));
 (0, import_mongo.connect)("worlds");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
@@ -45,6 +47,12 @@ app.get("/story/:storyid", (req, res) => {
     if (data) res.set("Content-Type", "application/json").send(JSON.stringify(data));
     else res.status(404).send();
   });
+});
+app.use("/app", (req, res) => {
+  const indexHtml = import_path.default.resolve(staticDir, "index.html");
+  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then(
+    (html) => res.send(html)
+  );
 });
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

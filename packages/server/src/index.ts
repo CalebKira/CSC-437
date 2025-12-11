@@ -4,7 +4,9 @@ import { connect } from "./services/mongo";
 import Story from "./services/story-svc";
 import stories from "./routes/stories";
 import auth, { authenticateUser } from "./routes/auth";
-import search from "./routes/search"
+import search from "./routes/search";
+import fs from "node:fs/promises";
+import path from "path";
 
 
 connect("worlds"); // use your own db name here
@@ -43,6 +45,12 @@ app.get("/story/:storyid", (req: Request, res: Response) => {
         connected to the collection tales */
 });
 
+app.use("/app", (req: Request, res: Response) => {
+    const indexHtml = path.resolve(staticDir, "index.html");
+    fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
+        res.send(html)
+    );
+});
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
