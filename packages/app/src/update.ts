@@ -10,24 +10,33 @@ export default function update(
     model: Model,
     user: Auth.User
 ): Model | ThenUpdate<Model, Msg> {
-    const [ request, contents ] = message;
-    switch (request) {
+    const [command, payload, callbacks] = message;
+
+    switch (command) {
         case "profile/request": {
-            const { userid } = contents;
+            const { userid } = payload;
             if (model.profile?.userid === userid ) break;
             return [
                 { ...model, profile: {userid} as Profile},
-                requestProfile(contents, user)
+                requestProfile(payload, user)
                 .then((profile) => ["profile/load", { userid, profile }])
             ];
         }
         case "profile/load": {
-            const { profile } = contents;
+            const { profile } = payload;
             return { ...model, profile };
+        }
+
+        case "profile/save": {
+            const { userid } = payload;
+            const { onSuccess, onFailure } = callbacks || {};
+            return saveProfile(payload, user, callbacks)
+            .then((profile) =>
+                ["profile/load", {userid, profile}])
         }
         // put the rest of your cases here
         default:
-            const unhandled = message[0];
+            const unhandled: never = command;
             throw new Error(`Unhandled Auth message "${unhandled}"`);
     }
 }
@@ -54,4 +63,42 @@ function requestProfile(
         if (json) return json as Profile
         throw "No JSON in response from server";
     });
+}
+
+function saveProfile(
+    msg: {
+        userid: string;
+        profile: Profile;
+    },
+    user: Auth.User,
+    callbacks: Message.Reactions
+    ): Promise<Profile> {
+    
+    return fetch(`/profile/${msg.userid}`, {
+        method: "PUT",
+        headers: {
+        "Content-Type": "application/json",
+        ...Auth.headers(user)
+        },
+        body: JSON.stringify(msg.profile)
+    })
+        .then((response: Response) => {
+        if (response.status === 200) return response.json();
+        throw new Error(
+            `Failed to save profile for ${msg.userid}`
+        );
+        })
+        .then((json: unknown) => {
+        if (json) {
+            if (callbacks.onSuccess) callbacks.onSuccess();
+            return json as Profile;
+        }
+        throw new Error(
+            `No JSON in API response`
+        )
+        })
+        .catch((err) => {
+        if (callbacks.onFailure) callbacks.onFailure(err);
+        throw err;
+        });
 }

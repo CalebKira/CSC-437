@@ -22,6 +22,8 @@ export class ProfileViewElement extends View<Model, Msg> {
         super("world:model");
     }
 
+
+
     render() {
         const {
             userid,
@@ -43,15 +45,15 @@ export class ProfileViewElement extends View<Model, Msg> {
                     <div class="divider"></div>
                 </h3>
 
-                <h4>Name: ${userid}</h4>
+                <h4>Name: <br>${userid}</h4>
                 
 
-                <h4>Pseudonym: ${pseudonym}</h4>
+                <h4>Pseudonym: <br>${pseudonym}</h4>
 
-                <h4>Email: ${email}</h4>
+                <h4>Email: <br>${email}</h4>
 
 
-                <button>Edit</button>
+                <a href="/app/profile/edit/${userid}">Edit</a>
             </div><br>
 
             <label id="dark">
@@ -78,9 +80,6 @@ export class ProfileViewElement extends View<Model, Msg> {
             oldValue !== newValue &&
             newValue
         ) {
-            console.log(name);
-            console.log(oldValue);
-            console.log(newValue);
             this.dispatchMessage([
             "profile/request",
             { userid: newValue }

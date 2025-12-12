@@ -17,6 +17,7 @@ import { SearchViewElement } from "./views/search-view";
 import { PostViewElement } from "./views/post-view";
 import { ShareViewElement } from "./views/share-view";
 import { ProfileViewElement } from "./views/profile-view.ts";
+import { ProfileEditElement } from "./views/profile-edit-view.ts";
 
 const routes = [
     {
@@ -68,7 +69,14 @@ const routes = [
         `
         /* OHH THE PARAMS JUST CHECK THE LINK AND YOU CAN CHANGE THE LINK
             TO HAVE THE ID OR WHATEVER IT IS */
-    }, /* profile  page */
+    }, /* profile page */
+
+    {
+        path: "/app/profile/edit/:id",
+        view: (params: Switch.Params) => html`
+        <profile-edit-view userid="${params.id}"></profile-edit-view>
+        `
+    }, /* profile edit page */
 
     {
         path: "/app/search",
@@ -127,4 +135,5 @@ define({
     "post-view": PostViewElement,
     "share-view": ShareViewElement,
     "profile-view": ProfileViewElement,
+    "profile-edit-view": ProfileEditElement,
 })
