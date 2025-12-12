@@ -1,7 +1,8 @@
-import { Story } from "server/models";
+import { Profile } from "server/models";
 
 export interface Model {
-    story?: Story;
+    profile?: Profile;
 }
+/* store the save here I believe */
 
 export const init: Model = {};

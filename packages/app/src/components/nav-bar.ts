@@ -28,7 +28,6 @@ export class NavBar extends LitElement {
             this.userid = undefined;
         }
         
-        console.log(this.userid);
         /* So cool! it changes the state values and checks if there has 
             ever been a login and reloads the page */
         });
@@ -55,6 +54,10 @@ export class NavBar extends LitElement {
     }
     /* determines between the sign in and signout conditionally in the html below */
 
+    src(){
+        return `/app/profile/${this.userid}`;
+    }
+
     override render() {
         /* FUTURE: add a reference to the home page here */
         return html`
@@ -73,7 +76,7 @@ export class NavBar extends LitElement {
                 Search
             </a>
 
-            <a href="/app/personal">
+            <a href="/app/personal/${this.userid}">
                 <svg class="icon">
                     <use href="../../icons/page_icons.svg#icon_private" />
                 </svg>
@@ -81,7 +84,10 @@ export class NavBar extends LitElement {
             </a>
 
 
-            <a slot="actuator">
+            <a slot="actuator" href="${this.loggedIn ?
+                this.src() :
+                "/app/login"
+            }">
                 <svg class="icon">
                     <use href="../../icons/page_icons.svg#icon_profile" />
                 </svg>

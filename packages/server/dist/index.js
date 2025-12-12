@@ -39,7 +39,7 @@ app.use(import_express.default.json());
 app.use("/api/stories", import_auth.authenticateUser, import_stories.default);
 app.use("/auth", import_auth.default);
 app.use("/search", import_search.default);
-app.use("/profile", import_profiles.default);
+app.use("/profile", import_auth.authenticateUser, import_profiles.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });

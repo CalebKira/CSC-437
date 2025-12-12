@@ -6,7 +6,7 @@ import {
     Store
 } from "@calpoly/mustang";
 import { html } from "lit";
-import { Msg } from "./message.ts";
+import { Msg } from "./messages.ts";
 import { Model, init } from "./model.ts";
 import update from "./update.ts";
 import { NavBar } from "./components/nav-bar";
@@ -16,6 +16,7 @@ import { LoginViewElement } from "./views/login-view";
 import { SearchViewElement } from "./views/search-view";
 import { PostViewElement } from "./views/post-view";
 import { ShareViewElement } from "./views/share-view";
+import { ProfileViewElement } from "./views/profile-view.ts";
 
 const routes = [
     {
@@ -27,8 +28,8 @@ const routes = [
 
     {
         path: "/app/writing",
-        view: (params: Switch.Params) => html`
-        <writing-view writing-id=${params.id}></writing-view>
+        view: () => html`
+        <writing-view></writing-view>
         `
     }, /* writing create page, like a menu create */
     
@@ -54,17 +55,19 @@ const routes = [
     }, /* signup page */
 
     {
-        path: "/app/personal",
+        path: "/app/personal/:id",
         view: () => html`
         <personal-view></personal-view>
         `
     }, /* personal writing page (index.html) */
 
     {
-        path: "/app/profile",
-        view: () => html`
-        <profile-view></profile-view>
+        path: "/app/profile/:id",
+        view: (params: Switch.Params) => html`
+        <profile-view userid="${params.id}"></profile-view>
         `
+        /* OHH THE PARAMS JUST CHECK THE LINK AND YOU CAN CHANGE THE LINK
+            TO HAVE THE ID OR WHATEVER IT IS */
     }, /* profile  page */
 
     {
@@ -105,6 +108,13 @@ define({
     "mu-auth": Auth.Provider,
     "mu-history": History.Provider,
     "nav-bar": NavBar,
+    "mu-store": class AppStore
+        extends Store.Provider<Model, Msg>
+    {
+        constructor() {
+        super(update, init, "world:auth");
+        }
+    },
     "mu-switch": class AppSwitch extends Switch.Element {
         constructor() {
             super(routes, "world:history", "world:auth");
@@ -116,4 +126,5 @@ define({
     "search-view": SearchViewElement,
     "post-view": PostViewElement,
     "share-view": ShareViewElement,
+    "profile-view": ProfileViewElement,
 })

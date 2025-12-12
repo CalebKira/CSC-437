@@ -24,7 +24,7 @@ app.use(express.json());
 app.use("/api/stories", authenticateUser, stories);
 app.use("/auth", auth);
 app.use("/search", search);
-app.use("/profile", profiles);
+app.use("/profile", authenticateUser, profiles);
 /* defining api routes grouped together */
 
 
