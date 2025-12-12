@@ -1,7 +1,7 @@
-import { define, View } from "@calpoly/mustang";
+import { View } from "@calpoly/mustang";
 import { css, html } from "lit";
 import { property, state } from "lit/decorators.js";
-import { Profile } from "server/models";
+import { Profile } from "../serverStuff/profile";
 import { Msg } from "../messages";
 import { Model } from "../model";
 import page from "../styles/page.css";
@@ -53,7 +53,7 @@ export class ProfileViewElement extends View<Model, Msg> {
                 <h4>Email: <br>${email}</h4>
 
 
-                <a href="/app/profile/edit/${userid}">Edit</a>
+                <a href="/app/profile/${userid}/edit">Edit</a>
             </div><br>
 
             <label id="dark">

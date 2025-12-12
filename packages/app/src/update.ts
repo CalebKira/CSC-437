@@ -1,21 +1,23 @@
-import { Auth, ThenUpdate } from "@calpoly/mustang";
+import { Auth, ThenUpdate, Message } from "@calpoly/mustang";
 import { Msg } from "./messages.ts";
 import { Model } from "./model.ts";
 import {
   Profile
-} from "server/models";
+} from "./serverStuff/profile.ts";
 
 export default function update(
     message: Msg,
     model: Model,
     user: Auth.User
 ): Model | ThenUpdate<Model, Msg> {
-    const [command, payload, callbacks] = message;
+    const [command, payload, callbacks ={}] = message;
 
     switch (command) {
         case "profile/request": {
             const { userid } = payload;
-            if (model.profile?.userid === userid ) break;
+            if (model.profile?.userid === userid ){
+                return model;
+            };
             return [
                 { ...model, profile: {userid} as Profile},
                 requestProfile(payload, user)
@@ -29,10 +31,12 @@ export default function update(
 
         case "profile/save": {
             const { userid } = payload;
-            const { onSuccess, onFailure } = callbacks || {};
-            return saveProfile(payload, user, callbacks)
+
+            return [model,
+            saveProfile(payload, user, callbacks)
             .then((profile) =>
                 ["profile/load", {userid, profile}])
+            ];
         }
         // put the rest of your cases here
         default:

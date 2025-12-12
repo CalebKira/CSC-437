@@ -1,4 +1,4 @@
-import { Profile } from "server/models";
+import { Profile } from "./serverStuff/profile";
 
 export type Msg =
     | [

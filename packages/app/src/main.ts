@@ -72,7 +72,7 @@ const routes = [
     }, /* profile page */
 
     {
-        path: "/app/profile/edit/:id",
+        path: "/app/profile/:id/edit",
         view: (params: Switch.Params) => html`
         <profile-edit-view userid="${params.id}"></profile-edit-view>
         `

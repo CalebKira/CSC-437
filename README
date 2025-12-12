@@ -4,13 +4,14 @@ This is a site that I created for people to be able to write, post, and share th
 
 Login Details: Caleb, Test1234
 
-This renders all the files that belong to me. It also 
+This renders all the files that belong to me. If you click on "Hello Caleb," it will now load the user page where you can edit and reload the data. 
 
 
 Future goals include:
-1. Have a create page and an editing page where you can create, edit, and save your work to your profile.
+1. Have a create page and an editing page where you can create, edit, and save your stories to your profile.
 2. Have your work linked together (ex: character is from this setting from this world in this plot)
 3. Make it so that you choose what documents to be public.
 4. A friending system to be notified when they post. Also the share functionality to be able to edit one another's work.
 5. Image rendering attached to each of your documents.
 6. A liking system to be able to determine what are the most popular writings on the website.
+7. Signup page

@@ -1,7 +1,7 @@
 import { define, Form, View, History } from "@calpoly/mustang";
 import { css, html } from "lit";
 import { property, state } from "lit/decorators.js";
-import { Profile } from "server/models";
+import { Profile } from "../serverStuff/profile";
 import { Msg } from "../messages";
 import { Model } from "../model";
 import page from "../styles/page.css";
@@ -55,7 +55,7 @@ export class ProfileEditElement extends View<Model, Msg> {
         this.dispatchMessage([
             "profile/save",
             {
-            userid: this.userid,
+            userid: this.userid!,
             profile: event.detail
             },
             {
